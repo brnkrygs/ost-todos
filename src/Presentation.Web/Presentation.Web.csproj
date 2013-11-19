@@ -199,14 +199,16 @@
     <Compile Include="Validation\User\ValidLoginAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\base.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\css\html5-boilerplate-main.css" />
+    <Content Include="Content\css\main.css">
+      <DependentUpon>main.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\main.min.css">
+      <DependentUpon>main.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\css\normalize.min.css" />
     <Content Include="Content\img\OST-Logo.png" />
-    <Content Include="Content\modules\form.css" />
-    <Content Include="Content\modules\todolist.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular\angular-bootstrap.js" />
@@ -217,11 +219,11 @@
     <Content Include="Scripts\app\controllers.js" />
     <Content Include="Scripts\app\directives.js" />
     <Content Include="Scripts\app\filters.js" />
+    <Content Include="Scripts\app\partials\dashboard.html" />
     <Content Include="Scripts\app\partials\lists.html" />
     <Content Include="Scripts\app\partials\login.html" />
     <Content Include="Scripts\app\partials\register.html" />
     <Content Include="Scripts\app\services.js" />
-    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -259,6 +261,9 @@
       <Project>{FD2016FF-4272-484A-9BFD-53E23DC6D5E5}</Project>
       <Name>Infrastructure.IoC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\main.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,6 +5,7 @@ var application = angular.module("todos", ["todos.controllers", "ngCookies", 'to
         $routeProvider.when('/lists', { templateUrl: '/Scripts/app/partials/lists.html', controller: 'ListsCtrl' });
         $routeProvider.when('/login', { templateUrl: '/Scripts/app/partials/login.html', controller: 'LoginCtrl' });
         $routeProvider.when('/register', { templateUrl: '/Scripts/app/partials/register.html', controller: 'RegisterCtrl' });
+        $routeProvider.when('/dashboard', { templateUrl: '/Scripts/app/partials/dashboard.html', controller: 'DashboardCtrl' });
         $routeProvider.otherwise({ redirectTo: '/login' });
     }]).
     config(["$httpProvider", function($httpProvider) {
