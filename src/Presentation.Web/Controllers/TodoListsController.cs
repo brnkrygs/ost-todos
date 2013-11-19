@@ -28,7 +28,7 @@ namespace Presentation.Web.Controllers
                 {
                     Name = x.Name,
                     Id = x.Id,
-                    Todos = x.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed }).ToList()
+                    Todos = x.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed , OrderNum = t.OrderNum}).ToList()
                 }).ToList();
             return displays;
         }
@@ -36,7 +36,7 @@ namespace Presentation.Web.Controllers
         [Authorize]
         [HttpPost]
         public HttpResponseMessage Post(TodoListInput list)
-        {
+            {
             var entity = new TodoList()
                 {
                     Name = list.Name,
@@ -45,6 +45,27 @@ namespace Presentation.Web.Controllers
             _repo.Store(entity);
             return Request.CreateResponse(HttpStatusCode.OK, new TodoListDisplay() { Name = entity.Name, Id = entity.Id });
         }
+
+        [Authorize]
+        [HttpPost]
+        public HttpResponseMessage MergeList(long Id, long Id2)
+        {
+            var list = _repo.Get(Id);
+            var list2 = _repo.Get(Id2);
+            foreach (var todo in list2.Todos)
+            {
+                list.AddTodo(todo);
+            }
+            _repo.Store(list);
+            _repo.Delete(list2);
+            return Request.CreateResponse(HttpStatusCode.OK,
+                                          list.Todos.Select(
+                                              t =>
+                                              new TodoDisplay() {Id = t.Id, Title = t.Title, Completed = t.Completed, OrderNum = t.OrderNum})
+                                              .ToList());
+        }
+
+
 
         [Authorize]
         [HttpDelete]
@@ -59,11 +80,18 @@ namespace Presentation.Web.Controllers
         [HttpPost]
         public HttpResponseMessage Todos(long Id, TodoInput todoInput)
         {
-            var todo = new Todo() { Title = todoInput.Title, Completed = false };
+            
             var list = _repo.Get(Id);
+            var orderNum = 1;
+            if (list.Todos.Count > 0)
+            {
+                orderNum = list.Todos.Max(x => x.OrderNum)+1;
+            }
+            var todo = new Todo() { Title = todoInput.Title, Completed = false , OrderNum = orderNum};
             list.AddTodo(todo);
             _repo.Store(list);
-            return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay { Title = todoInput.Title, Id = todo.Id, Completed = false });
+                return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay { Title = todoInput.Title, Id = todo.Id, Completed = false , OrderNum = orderNum});
+            
         }
 
         [Authorize]
@@ -72,7 +100,7 @@ namespace Presentation.Web.Controllers
         {
             var list = _repo.Get(Id);
             return
-                list.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed }).ToList();
+                list.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed , OrderNum = t.OrderNum}).ToList();
             ;
         }
     }

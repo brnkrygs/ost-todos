@@ -21,8 +21,9 @@ namespace Presentation.Web.Controllers
         {
             var todo = _repo.Get(Id);
             todo.Completed = todoInput.Completed;
+            todo.OrderNum = todoInput.OrderNum;
             _repo.Store(todo);
-            return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay() {Id = Id, Title = todo.Title, Completed = todo.Completed});
+            return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay() {Id = Id, Title = todo.Title, Completed = todo.Completed, OrderNum = todo.OrderNum});
         }
 
         [System.Web.Http.Authorize]
