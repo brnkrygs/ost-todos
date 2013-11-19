@@ -17,6 +17,9 @@
         };
 
     }]).
+    controller("DashboardCtrl", ["$scope", "$http", "$location", function($scope, $http, $location) {
+
+    }]).
     controller("ListsCtrl", ["$scope", "TodoList", function($scope, TodoList) {
 
         var self = this;
