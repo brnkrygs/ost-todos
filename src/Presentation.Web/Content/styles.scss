@@ -1,0 +1,108 @@
+@import "bourbon";
+
+$color-darkgrey: rgba(87,87,87,1);
+$color-lightgrey: lighten($color-darkgrey, 60%);
+$color-darkgreen: rgba(77,175,154,1);
+$color-lightgreen: rgba(148,205,99,1);
+$color-salmon: rgba(248,91,94,1);
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	margin:0;
+}
+
+a{
+	text-decoration: none;
+}
+
+nav, main{
+	float:left;
+	width:15%;
+}
+
+/*nav stuff*/
+nav{
+	color: white;
+	background-color: $color-lightgreen;
+	height:100%;
+}
+
+nav a{
+	color: white;
+	display:block;
+}
+
+nav ul{
+	list-style: none;
+	padding:0;
+	text-align: center;
+}
+
+nav li{
+	padding:10px 0px;
+}
+
+nav li:hover{
+	background: darken($color-lightgreen, 10%);
+}
+
+nav h1{
+	text-align: center;
+	margin:0 auto;
+}
+
+
+main{
+	width: auto;
+}
+
+/*sidebar stuff*/
+.sidebar-form{
+	float:right;
+	width:20%;
+	height:100%;
+	background-color: $color-lightgrey;
+	padding-left: 10px;
+}
+
+.newEventButton{
+	margin-top: 10px;
+	padding: 5px;
+	color: white;
+	background-color: $color-darkgrey;
+	@include border-radius(5px);
+}
+
+input, label, select{
+	width:90%;
+	display:block;
+}
+
+/* temp placeholder */
+.img-placeholder{
+	margin:20px auto;
+	height: 80px;
+	width: 80px;
+	background-color: $color-salmon;
+	@include border-radius(40px);
+}
+
+.fa-center{
+	height:80px;
+	width:80px;
+	text-align: center;
+}
+
+
+

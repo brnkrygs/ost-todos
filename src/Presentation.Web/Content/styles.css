@@ -1,0 +1,79 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+nav, main {
+  float: left;
+  width: 15%; }
+
+/*nav stuff*/
+nav {
+  color: white;
+  background-color: #94cd63;
+  height: 100%; }
+
+nav a {
+  color: white;
+  display: block; }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; }
+
+nav li {
+  padding: 10px 0px; }
+
+nav li:hover {
+  background: #7ac03d; }
+
+nav h1 {
+  text-align: center;
+  margin: 0 auto; }
+
+main {
+  width: auto; }
+
+/*sidebar stuff*/
+.sidebar-form {
+  float: right;
+  width: 20%;
+  height: 100%;
+  background-color: #f0f0f0;
+  padding-left: 10px; }
+
+.newEventButton {
+  margin-top: 10px;
+  padding: 5px;
+  color: white;
+  background-color: #575757;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+
+input, label, select {
+  width: 90%;
+  display: block; }
+
+/* temp placeholder */
+.img-placeholder {
+  margin: 20px auto;
+  height: 80px;
+  width: 80px;
+  background-color: #f85b5e;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  border-radius: 40px; }
+
+.fa-center {
+  height: 80px;
+  width: 80px;
+  text-align: center; }
