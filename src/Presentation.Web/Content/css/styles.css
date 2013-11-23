@@ -6,7 +6,7 @@ body {
 a {
   text-decoration: none; }
 
-nav, main {
+nav, section[role='main'] {
   float: left;
   width: 15%; }
 
@@ -35,7 +35,7 @@ nav h1 {
   text-align: center;
   margin: 0 auto; }
 
-main {
+section[role='main'] {
   width: auto; }
 
 /*sidebar stuff*/
@@ -51,10 +51,6 @@ main {
   padding: 5px;
   color: white;
   background-color: #575757;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
   border-radius: 5px; }
 
 input, label, select {
@@ -67,10 +63,6 @@ input, label, select {
   height: 80px;
   width: 80px;
   background-color: #f85b5e;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
   border-radius: 40px; }
 
 .fa-center {

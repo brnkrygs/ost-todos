@@ -6,16 +6,6 @@ $color-darkgreen: rgba(77,175,154,1);
 $color-lightgreen: rgba(148,205,99,1);
 $color-salmon: rgba(248,91,94,1);
 
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-       -o-border-radius: $radius;
-          border-radius: $radius;
-}
-
-
 body{
 	font-family: 'Open Sans', sans-serif;
 	width: 100%;
@@ -26,7 +16,7 @@ a{
 	text-decoration: none;
 }
 
-nav, main{
+nav, section[role='main']{
 	float:left;
 	width:15%;
 }
@@ -63,7 +53,7 @@ nav h1{
 }
 
 
-main{
+section[role='main']{
 	width: auto;
 }
 
@@ -81,7 +71,7 @@ main{
 	padding: 5px;
 	color: white;
 	background-color: $color-darkgrey;
-	@include border-radius(5px);
+	border-radius:5px;
 }
 
 input, label, select{
@@ -95,7 +85,7 @@ input, label, select{
 	height: 80px;
 	width: 80px;
 	background-color: $color-salmon;
-	@include border-radius(40px);
+	border-radius:40px;
 }
 
 .fa-center{
@@ -103,6 +93,3 @@ input, label, select{
 	width:80px;
 	text-align: center;
 }
-
-
-
