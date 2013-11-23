@@ -22,7 +22,8 @@ namespace Presentation.Web
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/css/*.css"
+                "~/Content/css/normalize.css",
+                "~/Content/css/styles.css"
                 ));
         }
     }
