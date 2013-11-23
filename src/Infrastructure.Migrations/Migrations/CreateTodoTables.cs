@@ -22,6 +22,7 @@ namespace Infrastructure.Migrations.Migrations
                   .WithColumn("Id").AsInt64().NotNullable().PrimaryKey().Identity()
                   .WithColumn("Title").AsString(255).NotNullable()
                   .WithColumn("Completed").AsBoolean().NotNullable()
+                  .WithColumn("OrderNum").AsInt64().NotNullable()
                   .WithColumn("List_id").AsInt64().NotNullable();
 
             Create.ForeignKey("FKAED63E4EC58792D0")
