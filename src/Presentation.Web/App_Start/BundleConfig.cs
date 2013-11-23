@@ -11,10 +11,6 @@ namespace Presentation.Web
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-1.9.1.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/Scripts/bootstrap.js"
-                ));
-
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular/angular.js",
                 "~/Scripts/angular/*.js"
@@ -26,14 +22,8 @@ namespace Presentation.Web
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/base.css",
-                "~/Content/modules/*.css"));
-
-            bundles.Add(new StyleBundle("~/Content/boot").Include(
-                        "~/Content/bootstrap/css/bootstrap.css",
-                        "~/Content/bootstrap/css/*.css"
+                "~/Content/css/*.css"
                 ));
-
         }
     }
 }
