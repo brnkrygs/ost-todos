@@ -18,7 +18,7 @@
         <nav>
 			<h1>todo</h1>
 			
-			<a class="img-placeholder"><i class="fa fa-smile-o fa-5x fa-center"></i></a>
+			<a role="portrait"><i class="fa fa-smile-o fa-5x fa-center"></i></a>
 
 			<ul>
 @*                            <li ng-hide="isLoggedIn()"><a href="/#login">Login</a></li>
@@ -48,11 +48,11 @@
 			</ul>
 		</nav>
         
-        <section role="main" ng-view>
+        <div role="main" ng-view>
             
             @RenderBody()
 
-		</section>
+		</div>
 
         <section class="sidebar-form">
 			<header>

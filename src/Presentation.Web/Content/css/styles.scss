@@ -1,97 +1,114 @@
 @import 'bourbon/bourbon';
+@import 'variables';
 
-$color-darkgrey: rgba(87,87,87,1);
-$color-lightgrey: lighten($color-darkgrey, 60%);
-$color-darkgreen: rgba(77,175,154,1);
-$color-lightgreen: rgba(148,205,99,1);
-$color-salmon: rgba(248,91,94,1);
+/**********
+ *
+ *  Table of contents
+ *
+ *  1. Global element settings
+ *  2. Layout styles for elements and classes
+ *  3. Module/widget/utility classes
+ *
+ */
 
-body{
-	font-family: 'Open Sans', sans-serif;
-	width: 100%;
-	margin:0;
-    height:100%;
-    position:absolute;
-}
+/******************************
+ * Global Elements
+ ******************************/
+    body{
+        font-family: 'Open Sans', sans-serif;
+        width: 100%;
+        margin:0;
+        height:100%;
+        position:absolute;
+    }
 
-a{
-	text-decoration: none;
-}
+    a{
+        text-decoration: none;
+    }
 
-nav, section[role='main']{
-	float:left;
-	width:15%;
-}
+/******************************
+ * Layout:Main
+ ******************************/
 
-/*nav stuff*/
-nav{
-	color: white;
-	background-color: $color-lightgreen;
-	height:100%;
-}
+    *[role='main']{
+        float:left;
+        width: auto;
+    }
 
-nav a{
-	color: white;
-	display:block;
-}
+/******************************
+ * Layout:Navigation
+ ******************************/
+    nav{
+        color: white;
+        background-color: $color-lightgreen;
+        height:100%;
+        float:left;
+        width:15%;
 
-nav ul{
-	list-style: none;
-	padding:0;
-	text-align: center;
-}
+        h1{
+            text-align: center;
+            margin:0 auto;
+        }
 
-nav li{
-	padding:10px 0px;
-}
+        a{
+            color: white;
+            display:block;
+        }
 
-nav li:hover{
-	background: darken($color-lightgreen, 10%);
-}
+        a[role='portrait']{
+            margin:20px auto;
+            height: 80px;
+            width: 80px;
+            background-color: $color-salmon;
+            border-radius:40px;
+        }
 
-nav h1{
-	text-align: center;
-	margin:0 auto;
-}
+        ul{
+            list-style: none;
+            padding:0;
+            text-align: center;
+
+            li{
+                padding:10px 0px;
+
+                &:hover{
+                    background: darken($color-lightgreen, 10%);
+                }
+            }
+        }
+
+    }
+
+/******************************
+ * Layout:Sidebar
+ ******************************/
+    .sidebar-form{
+        float:right;
+        width:20%;
+        height:100%;
+        background-color: $color-lightgrey;
+        padding-left: 10px;
+
+        .newEventButton{
+            margin-top: 10px;
+            padding: 5px;
+            color: white;
+            background-color: $color-darkgrey;
+            border-radius:5px;
+        }
+
+        input, label, select{
+            width:90%;
+            display:block;
+        }
+    }
 
 
-section[role='main']{
-	width: auto;
-}
-
-/*sidebar stuff*/
-.sidebar-form{
-	float:right;
-	width:20%;
-	height:100%;
-	background-color: $color-lightgrey;
-	padding-left: 10px;
-}
-
-.newEventButton{
-	margin-top: 10px;
-	padding: 5px;
-	color: white;
-	background-color: $color-darkgrey;
-	border-radius:5px;
-}
-
-input, label, select{
-	width:90%;
-	display:block;
-}
-
-/* temp placeholder */
-.img-placeholder{
-	margin:20px auto;
-	height: 80px;
-	width: 80px;
-	background-color: $color-salmon;
-	border-radius:40px;
-}
-
-.fa-center{
-	height:80px;
-	width:80px;
-	text-align: center;
-}
+/******************************
+ * Utility
+ ******************************/
+    .fa-center{
+        height:80px;
+        width:80px;
+        text-align: center;
+    }
