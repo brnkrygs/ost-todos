@@ -1,83 +1,98 @@
 ﻿<!DOCTYPE html>
 <html lang="en" ng-app="todos">
-    <head>
-        <meta charset="utf-8" />
-        <title>OST Todos</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        
-        <meta name="description" content="OST ToDos: FIREHAWK">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600,400' rel='stylesheet' type='text/css'>
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8" />
+    <title>OST Todos</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-        @Styles.Render("~/Content/css")
-    </head>
-    <body>
-        
-        <nav>
-			<h1>todo</h1>
-			
-			<a role="portrait"><i class="fa fa-smile-o fa-5x fa-center"></i></a>
+    <meta name="description" content="OST ToDos: FIREHAWK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-			<ul>
-@*                            <li ng-hide="isLoggedIn()"><a href="/#login">Login</a></li>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600,400' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    @Styles.Render( "~/Content/css" )
+</head>
+<body>
+
+    <nav>
+        <h1>todo</h1>
+
+        <a role="portrait"><i class="fa fa-smile-o fa-5x fa-center"></i></a>
+
+        <ul>
+            @*                            <li ng-hide="isLoggedIn()"><a href="/#login">Login</a></li>
                             <li ng-hide="isLoggedIn()"><a href="/#register">Register</a></li>
                             <li><a ng-show="isLoggedIn()" href="#" ng-click="logout()">Sign Out</a></li>*@
-				<li>
-					<a href="#"><i class="fa fa-eye"></i><br/>Discover</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-flask"></i><br/>UI Kit</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-file-text-o"></i><br/>Pages</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-envelope-o"></i><br/>Mail</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-tasks"></i><br/>Tasks</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-pencil"></i><br/>Notes</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-clock-o"></i><br/>Timeline</a>
-				</li>
-			</ul>
-		</nav>
-        
-        <div role="main" ng-view>
-            
-            @RenderBody()
+            <li>
+                <a href="#"><i class="fa fa-eye"></i>
+                    <br />
+                    Discover</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-flask"></i>
+                    <br />
+                    UI Kit</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-file-text-o"></i>
+                    <br />
+                    Pages</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-envelope-o"></i>
+                    <br />
+                    Mail</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-tasks"></i>
+                    <br />
+                    Tasks</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-pencil"></i>
+                    <br />
+                    Notes</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-clock-o"></i>
+                    <br />
+                    Timeline</a>
+            </li>
+        </ul>
+    </nav>
 
-		</div>
+    <div role="main" ng-view>
 
-        <section class="sidebar-form">
-			<header>
-				<h1>Timeline</h1>
-			</header>
-			<form>
-				<label>Name</label>
-				<input type="text"></input>
+        @RenderBody()
 
-				<label>Date</label>
-				<input type="date"></input>
+    </div>
 
-				<label>Time</label>
-				<input type="time"></input>
+    <section class="sidebar-form">
+        <header>
+            <h1>Timeline</h1>
+        </header>
+        <form>
+            <label>Name</label>
+            <input type="text"></input>
 
-				<label>Type</label>
-				<select></select>
-			</form>
+            <label>Date</label>
+            <input type="date"></input>
 
-			<a class="newEventButton" href="#">Add an Event</a>
-		</section>
+            <label>Time</label>
+            <input type="time"></input>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/angular")
-        @Scripts.Render("~/bundles/app")
-        @RenderSection("scripts", required: false)
-    </body>
+            <label>Type</label>
+            <select></select>
+
+            <button>Add an Event</button>
+        </form>
+
+    </section>
+
+    @Scripts.Render( "~/bundles/jquery" )
+    @Scripts.Render( "~/bundles/angular" )
+    @Scripts.Render( "~/bundles/app" )
+    @RenderSection( "scripts", required: false )
+</body>
 </html>

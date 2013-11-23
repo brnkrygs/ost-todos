@@ -5,12 +5,18 @@
  *
  *  1. Global element settings
  *  2. Layout styles for elements and classes
- *  3. Module/widget/utility classes
+ *  3. Form styles
+ *  4. Module/widget/utility classes
  *
  */
 /******************************
  * Global Elements
  ******************************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
   font-family: 'Open Sans', sans-serif;
   width: 100%;
@@ -67,15 +73,30 @@ nav {
   height: 100%;
   background-color: #f0f0f0;
   padding-left: 10px; }
-  .sidebar-form .newEventButton {
-    margin-top: 10px;
-    padding: 5px;
-    color: white;
-    background-color: #575757;
-    border-radius: 5px; }
   .sidebar-form input, .sidebar-form label, .sidebar-form select {
     width: 90%;
     display: block; }
+  .sidebar-form button {
+    margin-top: 10px;
+    color: white;
+    background-color: #575757; }
+
+/******************************
+ * Forms
+ ******************************/
+input, button, select {
+  border-radius: 5px; }
+
+input, select {
+  padding: .3rem;
+  border: 1px solid #575757; }
+
+button {
+  border: 0;
+  font-size: .8rem;
+  padding: .5rem; }
+  button:hover {
+    background-color: #0a0a0a; }
 
 /******************************
  * Utility
