@@ -18,9 +18,14 @@
     *{ 
         @include box-sizing( border-box ); 
     }
+
+    html{ 
+        font-size: 10px; 
+    }
     
     body{
         font-family: 'Open Sans', sans-serif;
+        color: $color-darkgrey;
         width: 100%;
         margin:0;
         height:100%;
@@ -29,6 +34,9 @@
 
     a{
         text-decoration: none;
+    }
+
+    h1,h2,h3,h4,h5,h6{
     }
 
 /******************************
@@ -101,8 +109,11 @@
 
         button{
             margin-top: 10px;
-            color: white;
             background-color: $color-darkgrey;
+
+            &:hover{
+                background-color: darken( $color-darkgrey, 30% );
+            }
         }
     }
 
@@ -115,16 +126,21 @@
 
     input, select{
         padding: .3rem;
-        border: 1px solid $color-darkgrey;
+        border: 1px solid $color-mediumgrey;
     }
 
     button{
         border:0;
-        font-size: .8rem;
-        padding: .5rem;
+        padding: 1rem;
+
+        font-size: 1.2rem;
+        font-weight:bold;
+
+        color: white;
+        background-color: $color-gold;
 
         &:hover{
-            background-color: darken( $color-darkgrey, 30% );
+            background-color: lighten( $color-gold, 20% );
         }
     }
 

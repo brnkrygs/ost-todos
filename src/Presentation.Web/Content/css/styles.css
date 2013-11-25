@@ -17,8 +17,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  font-size: 10px; }
+
 body {
   font-family: 'Open Sans', sans-serif;
+  color: #575757;
   width: 100%;
   margin: 0;
   height: 100%;
@@ -78,8 +82,9 @@ nav {
     display: block; }
   .sidebar-form button {
     margin-top: 10px;
-    color: white;
     background-color: #575757; }
+    .sidebar-form button:hover {
+      background-color: #0a0a0a; }
 
 /******************************
  * Forms
@@ -89,14 +94,17 @@ input, button, select {
 
 input, select {
   padding: .3rem;
-  border: 1px solid #575757; }
+  border: 1px solid #717171; }
 
 button {
   border: 0;
-  font-size: .8rem;
-  padding: .5rem; }
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #e5a737; }
   button:hover {
-    background-color: #0a0a0a; }
+    background-color: #f1cf91; }
 
 /******************************
  * Utility
