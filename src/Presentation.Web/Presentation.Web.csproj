@@ -312,6 +312,9 @@
     <Content Include="Content\css\bourbon\_bourbon-deprecated-upcoming.scss" />
     <Content Include="Content\css\bourbon\_bourbon.scss" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\variables.scss" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
