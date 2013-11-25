@@ -4,6 +4,8 @@
     {
         public bool Completed { get; set; }
 
+        public int OrderNum { get; set; }
+
         public string Title { get; set; }
 
         public long Id { get; set; }

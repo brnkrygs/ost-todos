@@ -8,6 +8,8 @@ namespace Core.Domain.Model.Todos
 
         public virtual bool Completed { get; set; }
 
+        public virtual int OrderNum { get; set; }
+
         public virtual TodoList List { get; set; }
     }
 }
