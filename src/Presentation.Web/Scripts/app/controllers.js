@@ -42,7 +42,7 @@
         this.setLists();
         
         $scope.addList = function() {
-            var todo = new TodoList({ Name: $scope.Name });
+            var todo = new TodoList({ Name: $scope.Name , ListTime: $scope.ListName});
             todo.$save(function () {
                 $scope.$broadcast('list:added');
                 self.setLists();
@@ -59,6 +59,15 @@
         });
 
         $scope.addTodo = function (title) {
+            var todo = new ListTodo({ Title: title });
+            todo.$save({ listId: $scope.list.Id }, function () {
+                $scope.list.Todos.push(todo);
+                $scope.showAddForm = 0;
+                $scope.Title = "";
+            });
+        };
+        
+        $scope.mergeTodo = function (title) {
             var todo = new ListTodo({ Title: title });
             todo.$save({ listId: $scope.list.Id }, function () {
                 $scope.list.Todos.push(todo);

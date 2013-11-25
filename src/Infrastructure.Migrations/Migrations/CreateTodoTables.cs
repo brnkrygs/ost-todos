@@ -10,7 +10,8 @@ namespace Infrastructure.Migrations.Migrations
             Create.Table("TodoList")
                   .WithColumn("Id").AsInt64().NotNullable().PrimaryKey().Identity()
                   .WithColumn("Name").AsString(255).NotNullable()
-                  .WithColumn("Owner_id").AsInt64().NotNullable();
+                  .WithColumn("Owner_id").AsInt64().NotNullable()
+                  .WithColumn("ListTime").AsDateTime().NotNullable();
 
             Create.ForeignKey("FK7EF41F0268F7285D")
                   .FromTable("TodoList")
@@ -22,6 +23,9 @@ namespace Infrastructure.Migrations.Migrations
                   .WithColumn("Id").AsInt64().NotNullable().PrimaryKey().Identity()
                   .WithColumn("Title").AsString(255).NotNullable()
                   .WithColumn("Completed").AsBoolean().NotNullable()
+                  .WithColumn("TodoTime").AsDateTime().NotNullable()
+                  .WithColumn("Description").AsString(255).NotNullable()
+                  .WithColumn("Type").AsString(255).NotNullable()
                   .WithColumn("List_id").AsInt64().NotNullable();
 
             Create.ForeignKey("FKAED63E4EC58792D0")
