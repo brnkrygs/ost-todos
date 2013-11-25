@@ -31,12 +31,17 @@ body {
 a {
   text-decoration: none; }
 
+/* To be dropped once new functionality is working */
+#obsolete-remove-me {
+  display: none; }
+
 /******************************
  * Layout:Main
  ******************************/
 *[role='main'] {
   float: left;
-  width: auto; }
+  /*width: auto;*/
+  width: 65%; }
 
 /******************************
  * Layout:Navigation
@@ -113,3 +118,18 @@ button {
   height: 80px;
   width: 80px;
   text-align: center; }
+
+.todos {
+  margin: 0 0 0 50%;
+  padding: 0;
+  list-style-type: none; }
+  .todos li {
+    margin: 0 0 100px 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    width: 20px; }
+
+.todo-detail {
+  position: absolute;
+  width: auto;
+  max-width: 20%; }

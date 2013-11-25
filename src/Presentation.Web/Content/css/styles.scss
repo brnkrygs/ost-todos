@@ -39,13 +39,18 @@
     h1,h2,h3,h4,h5,h6{
     }
 
+
+    /* To be dropped once new functionality is working */
+    #obsolete-remove-me{ display:none; }
+
 /******************************
  * Layout:Main
  ******************************/
 
     *[role='main']{
         float:left;
-        width: auto;
+        /*width: auto;*/
+        width: 65%;
     }
 
 /******************************
@@ -151,4 +156,24 @@
         height:80px;
         width:80px;
         text-align: center;
+    }
+
+    .todos{
+        margin:0 0 0 50%;
+        padding:0;
+
+        list-style-type:none;
+
+        li{
+            margin:0 0 100px 0;
+            padding:0;
+            background-color:$color-lightgrey;
+            width:20px;
+        }
+    }
+
+    .todo-detail{
+        position:absolute;
+        width:auto;
+        max-width:20%;
     }

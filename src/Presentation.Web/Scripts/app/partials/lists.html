@@ -1,60 +1,78 @@
-﻿<div class="row">
-    <div class="span12">
-        <h2>My Todo Lists <button class="btn btn-primary" show-add-list>New List</button></h2>
-    </div>
-</div>
+﻿<ul class="todos">
+    <li data-ng-repeat="todo in lists[0].row[0].Todos">
+        _ph_
+        <div class="todo-detail">
+            <h3>Type</h3>
+            <h2>{{ todo.Title }}</h2>
+            <p>Description text would go here.</p>
+        </div>
+    </li>
+</ul>
 
-<div class="row" ng-repeat="row in lists">
-    <div class="span6" ng-repeat="list in row.row">
-        <div class="well todolist" ng-controller="ListCtrl">
-            <h3 class="todolist-title">{{list.Name}} <i delete-list title="Click to delete list" class="icon-trash"></i></h3>
-            <form name="addTodoForm" class="form-inline" ng-submit="addTodo(Title)">
-                <input type="text" ng-model="Title" placeholder="Pick up the milk" give-focus required />
-                <button type="submit" class="btn btn-success">Add Todo</button>
-            </form>
-            <div ng-show="list.Todos.length > 0">
-                <h4 ng-hide="completed() == list.Todos.length">Not Done</h4>
-                <ul class="todos">
-                    <li ng-repeat="todo in list.Todos | incomplete | orderBy:'OrderNum'" ng-controller="TodoCtrl">
-                        <label class="checkbox">
-                            <input ng-click="markDone(todo)" type="checkbox" /> {{todo.Title}} <i ng-click="delete(todo)" title="Click to delete todo" class="icon-remove"></i>
-                        </label>     
-                    </li>
-                </ul>
-                <h4 ng-hide="completed() == 0">Done</h4>
-                <ul class="todos">
-                    <li ng-repeat="todo in list.Todos | complete" ng-controller="TodoCtrl">
-                        <label class="checkbox">
-                            <input ng-click="markNotDone(todo)" type="checkbox" checked="checked" /> {{todo.Title}} <i ng-click="delete(todo)" title="Click to delete todo" class="icon-remove"></i>
-                        </label>
-                    </li>
-                </ul>
+<hr/>
+
+<div id="obsolete-remove-me">
+    <div class="row">
+        <div class="span12">
+            <h2>My Todo Lists
+                <button class="btn btn-primary" show-add-list>New List</button></h2>
+        </div>
+    </div>
+
+    <div class="row" ng-repeat="row in lists">
+        <div class="span6" ng-repeat="list in row.row">
+            <div class="well todolist" ng-controller="ListCtrl">
+                <h3 class="todolist-title">{{list.Name}} <i delete-list title="Click to delete list" class="icon-trash"></i></h3>
+                <form name="addTodoForm" class="form-inline" ng-submit="addTodo(Title)">
+                    <input type="text" ng-model="Title" placeholder="Pick up the milk" give-focus required />
+                    <button type="submit" class="btn btn-success">Add Todo</button>
+                </form>
+                <div ng-show="list.Todos.length > 0">
+                    <h4 ng-hide="completed() == list.Todos.length">Not Done</h4>
+                    <ul class="todos">
+                        <li ng-repeat="todo in list.Todos | incomplete | orderBy:'OrderNum'" ng-controller="TodoCtrl">
+                            <label class="checkbox">
+                                <input ng-click="markDone(todo)" type="checkbox" />
+                                {{todo.Title}} <i ng-click="delete(todo)" title="Click to delete todo" class="icon-remove"></i>
+                            </label>
+                        </li>
+                    </ul>
+                    <h4 ng-hide="completed() == 0">Done</h4>
+                    <ul class="todos">
+                        <li ng-repeat="todo in list.Todos | complete" ng-controller="TodoCtrl">
+                            <label class="checkbox">
+                                <input ng-click="markNotDone(todo)" type="checkbox" checked="checked" />
+                                {{todo.Title}} <i ng-click="delete(todo)" title="Click to delete todo" class="icon-remove"></i>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal hide fade" id="addListModal">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Add New List</h3>
-    </div>
-    <div class="modal-body">
-        <form name="addListForm" class="form-horizontal" ng-submit="addList()">
-            <div class="control-group" ng-class="{error: addListForm.Name.$invalid}">
-                <label class="control-label" for="Name">Name:</label>
-                <div class="controls">
-                    <input type="text" ng-model="Name" value="" id="Name" name="Name" placeholder="New List Name" required />
+    <div class="modal hide fade" id="addListModal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Add New List</h3>
+        </div>
+        <div class="modal-body">
+            <form name="addListForm" class="form-horizontal" ng-submit="addList()">
+                <div class="control-group" ng-class="{error: addListForm.Name.$invalid}">
+                    <label class="control-label" for="Name">Name:</label>
+                    <div class="controls">
+                        <input type="text" ng-model="Name" value="" id="Name" name="Name" placeholder="New List Name" required />
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <button type="submit" class="btn btn-primary">Add</button>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
                 </div>
-            </div>
-        </form>  
-    </div>
-    <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">Close</a>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn">Close</a>
+        </div>
     </div>
 </div>
