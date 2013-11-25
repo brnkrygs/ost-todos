@@ -169,11 +169,21 @@
             padding:0;
             background-color:$color-lightgrey;
             width:20px;
+            height:20px;
         }
     }
 
     .todo-detail{
-        position:absolute;
-        width:auto;
-        max-width:20%;
+        position:relative;
+        left:-200px;
+
+        width:200px;
+        max-width:300px;
+
+        border: 1px solid $color-lightgrey;
+        border-radius: 3px;
+
+        p:after{
+            @include triangle(12px, $color-lightgrey, right);
+        }
     }
