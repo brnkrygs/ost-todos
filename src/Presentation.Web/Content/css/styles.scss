@@ -191,7 +191,7 @@
         background-color: white;
         box-shadow: 0 1px 3px 0 $color-lightgrey;
 
-        h2, h3, p{
+        h2, h3, p, time{
             padding:0;
             margin: 0;
         }
@@ -206,14 +206,23 @@
             white-space: nowrap;
         }
 
-        p {
+        p, time {
             margin-top: 1em;
             font-size: 1.2rem;
+        }
+
+        time {
+            position: absolute;
+            top: 23%;
         }
     }
 
     .todos li:nth-child(even) .todo-detail {
         right: 40px;
+
+        time {
+            right: -100px;
+        }
 
         .triangle{
             @include triangle(14px, $color-bordergrey, right);
@@ -233,8 +242,11 @@
     }
 
     .todos li:nth-child(odd) .todo-detail {
-
         left: 40px;
+
+        time {
+            left: -100px;
+        }
             
         .triangle{
             @include triangle(14px, $color-bordergrey, left);

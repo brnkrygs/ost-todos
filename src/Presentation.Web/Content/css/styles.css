@@ -143,7 +143,7 @@ button {
   border-radius: 3px;
   background-color: white;
   box-shadow: 0 1px 3px 0 #f0f0f0; }
-  .todo-detail h2, .todo-detail h3, .todo-detail p {
+  .todo-detail h2, .todo-detail h3, .todo-detail p, .todo-detail time {
     padding: 0;
     margin: 0; }
   .todo-detail h2 {
@@ -152,12 +152,17 @@ button {
   .todo-detail h3 {
     font-weight: normal;
     white-space: nowrap; }
-  .todo-detail p {
+  .todo-detail p, .todo-detail time {
     margin-top: 1em;
     font-size: 1.2rem; }
+  .todo-detail time {
+    position: absolute;
+    top: 23%; }
 
 .todos li:nth-child(even) .todo-detail {
   right: 40px; }
+  .todos li:nth-child(even) .todo-detail time {
+    right: -100px; }
   .todos li:nth-child(even) .todo-detail .triangle {
     height: 0;
     width: 0;
@@ -183,6 +188,8 @@ button {
 
 .todos li:nth-child(odd) .todo-detail {
   left: 40px; }
+  .todos li:nth-child(odd) .todo-detail time {
+    left: -100px; }
   .todos li:nth-child(odd) .todo-detail .triangle {
     height: 0;
     width: 0;
