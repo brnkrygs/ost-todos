@@ -1,4 +1,5 @@
-﻿using Core.Domain.Model.TodoLists;
+﻿using System;
+using Core.Domain.Model.TodoLists;
 
 namespace Core.Domain.Model.Todos
 {
@@ -7,6 +8,12 @@ namespace Core.Domain.Model.Todos
         public virtual string Title { get; set; }
 
         public virtual bool Completed { get; set; }
+
+        public virtual string Description { get; set; }
+
+        public virtual string Type { get; set; }
+
+        public virtual DateTime TodoTime { get; set; }
 
         public virtual int OrderNum { get; set; }
 

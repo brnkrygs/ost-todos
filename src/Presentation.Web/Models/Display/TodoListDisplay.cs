@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Presentation.Web.Models.Display
 {
@@ -7,6 +8,8 @@ namespace Presentation.Web.Models.Display
         public string Name { get; set; }
 
         public long Id { get; set; }
+
+        public DateTime ListTime { get; set; }
 
         public List<TodoDisplay> Todos { get; set; } 
     }

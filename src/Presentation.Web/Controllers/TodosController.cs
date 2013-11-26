@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Http;
 using Core.Domain.Model;
 using Core.Domain.Model.Todos;
@@ -21,9 +22,12 @@ namespace Presentation.Web.Controllers
         {
             var todo = _repo.Get(Id);
             todo.Completed = todoInput.Completed;
-            todo.OrderNum = todoInput.OrderNum;
+           // todo.TodoTime = todoInput.TodoTime;
+            todo.TodoTime = DateTime.Now;
+            todo.Description = todoInput.Description;
+            todo.Type = todoInput.Type;
             _repo.Store(todo);
-            return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay() {Id = Id, Title = todo.Title, Completed = todo.Completed, OrderNum = todo.OrderNum});
+            return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay() {Id = Id, Title = todo.Title, Completed = todo.Completed, TodoTime = todo.TodoTime, Description = todo.Description, Type = todo.Type});
         }
 
         [System.Web.Http.Authorize]

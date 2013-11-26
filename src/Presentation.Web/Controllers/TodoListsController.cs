@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -28,7 +30,7 @@ namespace Presentation.Web.Controllers
                 {
                     Name = x.Name,
                     Id = x.Id,
-                    Todos = x.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed , OrderNum = t.OrderNum}).ToList()
+                    Todos = x.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed, TodoTime = t.TodoTime, Description = t.Description, Type = t.Type}).ToList()
                 }).ToList();
             return displays;
         }
@@ -36,14 +38,20 @@ namespace Presentation.Web.Controllers
         [Authorize]
         [HttpPost]
         public HttpResponseMessage Post(TodoListInput list)
-            {
+        {
+            //if (list.ListTime <= SqlDateTime.MinValue || list.ListTime >= SqlDateTime.MaxValue)
+            //{
+            //    list.ListTime = DateTime.Now;
+            //}
+            list.ListTime = DateTime.Now;
             var entity = new TodoList()
                 {
                     Name = list.Name,
+                    ListTime = list.ListTime,
                     Owner = LoadUser()
                 };
             _repo.Store(entity);
-            return Request.CreateResponse(HttpStatusCode.OK, new TodoListDisplay() { Name = entity.Name, Id = entity.Id });
+            return Request.CreateResponse(HttpStatusCode.OK, new TodoListDisplay() { Name = entity.Name, Id = entity.Id, ListTime = entity.ListTime});
         }
 
         [Authorize]
@@ -61,7 +69,7 @@ namespace Presentation.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.OK,
                                           list.Todos.Select(
                                               t =>
-                                              new TodoDisplay() {Id = t.Id, Title = t.Title, Completed = t.Completed, OrderNum = t.OrderNum})
+                                              new TodoDisplay() {Id = t.Id, Title = t.Title, Completed = t.Completed, TodoTime = t.TodoTime, Type = t.Type, Description = t.Description})
                                               .ToList());
         }
 
@@ -82,15 +90,20 @@ namespace Presentation.Web.Controllers
         {
             
             var list = _repo.Get(Id);
-            var orderNum = 1;
-            if (list.Todos.Count > 0)
+            todoInput.TodoTime = DateTime.Now;
+            if (String.IsNullOrEmpty(todoInput.Description))
             {
-                orderNum = list.Todos.Max(x => x.OrderNum)+1;
+                todoInput.Description = "";
             }
-            var todo = new Todo() { Title = todoInput.Title, Completed = false , OrderNum = orderNum};
+
+            if (String.IsNullOrEmpty(todoInput.Type))
+            {
+                todoInput.Type = "";
+            }
+            var todo = new Todo() { Title = todoInput.Title, Completed = false , TodoTime = todoInput.TodoTime, Description = todoInput.Description, Type = todoInput.Type};
             list.AddTodo(todo);
             _repo.Store(list);
-                return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay { Title = todoInput.Title, Id = todo.Id, Completed = false , OrderNum = orderNum});
+                return Request.CreateResponse(HttpStatusCode.OK, new TodoDisplay { Title = todoInput.Title, Id = todo.Id, Completed = false , TodoTime = todoInput.TodoTime, Description = todoInput.Description, Type = todoInput.Type});
             
         }
 
@@ -100,7 +113,7 @@ namespace Presentation.Web.Controllers
         {
             var list = _repo.Get(Id);
             return
-                list.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed , OrderNum = t.OrderNum}).ToList();
+                list.Todos.Select(t => new TodoDisplay() { Id = t.Id, Title = t.Title, Completed = t.Completed , TodoTime = t.TodoTime, Description = t.Description, Type = t.Type}).ToList();
             ;
         }
     }

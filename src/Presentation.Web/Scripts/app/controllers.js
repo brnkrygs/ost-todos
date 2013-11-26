@@ -42,7 +42,7 @@
         this.setLists();
         
         $scope.addList = function() {
-            var todo = new TodoList({ Name: $scope.Name });
+            var todo = new TodoList({ Name: $scope.Name , ListTime: $scope.ListName});
             todo.$save(function () {
                 $scope.$broadcast('list:added');
                 self.setLists();

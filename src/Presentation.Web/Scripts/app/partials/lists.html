@@ -30,7 +30,7 @@
                 <div ng-show="list.Todos.length > 0">
                     <h4 ng-hide="completed() == list.Todos.length">Not Done</h4>
                     <ul class="todos">
-                        <li ng-repeat="todo in list.Todos | incomplete | orderBy:'OrderNum'" ng-controller="TodoCtrl">
+                    <li ng-repeat="todo in list.Todos | incomplete | orderBy:'ListTime'" ng-controller="TodoCtrl">
                             <label class="checkbox">
                                 <input ng-click="markDone(todo)" type="checkbox" />
                                 {{todo.Title}} <i ng-click="delete(todo)" title="Click to delete todo" class="icon-remove"></i>
@@ -62,6 +62,7 @@
                     <label class="control-label" for="Name">Name:</label>
                     <div class="controls">
                         <input type="text" ng-model="Name" value="" id="Name" name="Name" placeholder="New List Name" required />
+                    <input type="datetime" ng-model="ListTime" value="{{ date | date: 'yyyy-MM-dd' }}" id="ListTime" name="ListTime" required />
                     </div>
                 </div>
                 <div class="control-group">

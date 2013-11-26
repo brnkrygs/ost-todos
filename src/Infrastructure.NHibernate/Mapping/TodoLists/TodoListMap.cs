@@ -9,6 +9,7 @@ namespace Infrastructure.NHibernate.Mapping.TodoLists
         {
             Id(x => x.Id).GeneratedBy.Native();
             Map(x => x.Name).Not.Nullable();
+            Map(x => x.ListTime).Not.Nullable();
             HasMany(x => x.Todos).KeyColumn("List_id").AsSet().Inverse().Cascade.AllDeleteOrphan();
             References(x => x.Owner, "Owner_id").Not.Nullable();
         }

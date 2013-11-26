@@ -11,7 +11,9 @@ namespace Infrastructure.NHibernate.Mapping.Todos
             Id(x => x.Id).GeneratedBy.Native();
             Map(x => x.Title).Not.Nullable();
             Map(x => x.Completed).Not.Nullable();
-            Map(x => x.OrderNum).Not.Nullable();
+            Map(x => x.TodoTime).Not.Nullable();
+            Map(x => x.Description).Not.Nullable();
+            Map(x => x.Type).Not.Nullable();
             References(x => x.List, "List_id").Not.Nullable();
         }
     }

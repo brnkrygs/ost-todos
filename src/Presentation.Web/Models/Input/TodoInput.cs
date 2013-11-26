@@ -1,4 +1,6 @@
-﻿namespace Presentation.Web.Models.Input
+﻿using System;
+
+namespace Presentation.Web.Models.Input
 {
     public class TodoInput
     {
@@ -6,6 +8,10 @@
 
         public bool Completed { get; set; }
 
-        public int OrderNum { get; set; }
+        public DateTime TodoTime { get; set; }
+
+        public string Description { get; set; }
+
+        public string Type { get; set; }
     }
 }
