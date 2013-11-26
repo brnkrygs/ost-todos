@@ -41,7 +41,8 @@ a {
 *[role='main'] {
   float: left;
   /*width: auto;*/
-  width: 65%; }
+  width: 65%;
+  background-color: #f9fafc; }
 
 /******************************
  * Layout:Navigation
@@ -124,19 +125,28 @@ button {
   padding: 0;
   list-style-type: none; }
   .todos li {
+    width: 30px;
+    height: 30px;
+    position: relative;
     margin: 0 0 100px 0;
     padding: 0;
-    background-color: #f0f0f0;
-    width: 20px;
-    height: 20px; }
+    background-color: #94cd63;
+    border-radius: 50%; }
 
 .todo-detail {
-  position: relative;
-  left: -200px;
+  position: absolute;
+  right: 40px;
+  top: -75%;
   width: 200px;
   max-width: 300px;
-  border: 1px solid #f0f0f0;
-  border-radius: 3px; }
+  padding: 10px 10px 13px 10px;
+  border: 1px solid #ebeff6;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #f0f0f0; }
+  .todo-detail h2, .todo-detail h3, .todo-detail p {
+    padding: 0;
+    margin: 0; }
   .todo-detail p:after {
     height: 0;
     width: 0;

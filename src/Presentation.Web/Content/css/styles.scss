@@ -51,6 +51,7 @@
         float:left;
         /*width: auto;*/
         width: 65%;
+        background-color: $color-background;
     }
 
 /******************************
@@ -165,23 +166,36 @@
         list-style-type:none;
 
         li{
+            width:30px;
+            height:30px;
+            position: relative;
+
             margin:0 0 100px 0;
             padding:0;
-            background-color:$color-lightgrey;
-            width:20px;
-            height:20px;
+
+            background-color:$color-lightgreen;
+            border-radius: 50%;
         }
     }
 
     .todo-detail{
-        position:relative;
-        left:-200px;
+        position:absolute;
+        right: 40px;
+        top: -75%;
 
         width:200px;
         max-width:300px;
+        padding: 10px 10px 13px 10px;
 
-        border: 1px solid $color-lightgrey;
+        border: 1px solid $color-bordergrey;
         border-radius: 3px;
+        background-color: white;
+        box-shadow: 0 1px 3px 0 $color-lightgrey;
+
+        h2, h3, p{
+            padding:0;
+            margin: 0;
+        }
 
         p:after{
             @include triangle(12px, $color-lightgrey, right);
