@@ -197,7 +197,19 @@
             margin: 0;
         }
 
-        p:after{
-            @include triangle(12px, $color-lightgrey, right);
+        .triangle{
+            @include triangle(14px, $color-bordergrey, right);
+            position: absolute;
+            right: -14px;
+            top: 40%;
+
+            &:after {
+                content: ' ';
+                display: block;
+                @include triangle(14px, white, right);
+                position: absolute;
+                top: -7px;
+                left: -9px;
+            }
         }
     }

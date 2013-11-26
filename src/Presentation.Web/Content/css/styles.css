@@ -147,10 +147,25 @@ button {
   .todo-detail h2, .todo-detail h3, .todo-detail p {
     padding: 0;
     margin: 0; }
-  .todo-detail p:after {
+  .todo-detail .triangle {
     height: 0;
     width: 0;
     border-color: transparent;
     border-style: solid;
-    border-width: 6px;
-    border-left-color: #f0f0f0; }
+    border-width: 7px;
+    border-left-color: #ebeff6;
+    position: absolute;
+    right: -14px;
+    top: 40%; }
+    .todo-detail .triangle:after {
+      content: ' ';
+      display: block;
+      height: 0;
+      width: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 7px;
+      border-left-color: white;
+      position: absolute;
+      top: -7px;
+      left: -9px; }
