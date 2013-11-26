@@ -135,10 +135,9 @@ button {
 
 .todo-detail {
   position: absolute;
-  right: 40px;
-  top: -75%;
-  width: 200px;
-  max-width: 300px;
+  top: -95%;
+  min-width: 195px;
+  max-width: 500px;
   padding: 10px 10px 13px 10px;
   border: 1px solid #ebeff6;
   border-radius: 3px;
@@ -147,7 +146,19 @@ button {
   .todo-detail h2, .todo-detail h3, .todo-detail p {
     padding: 0;
     margin: 0; }
-  .todo-detail .triangle {
+  .todo-detail h2 {
+    font-size: 1.4rem;
+    white-space: nowrap; }
+  .todo-detail h3 {
+    font-weight: normal;
+    white-space: nowrap; }
+  .todo-detail p {
+    margin-top: 1em;
+    font-size: 1.2rem; }
+
+.todos li:nth-child(even) .todo-detail {
+  right: 40px; }
+  .todos li:nth-child(even) .todo-detail .triangle {
     height: 0;
     width: 0;
     border-color: transparent;
@@ -157,7 +168,7 @@ button {
     position: absolute;
     right: -14px;
     top: 40%; }
-    .todo-detail .triangle:after {
+    .todos li:nth-child(even) .todo-detail .triangle:after {
       content: ' ';
       display: block;
       height: 0;
@@ -169,3 +180,28 @@ button {
       position: absolute;
       top: -7px;
       left: -9px; }
+
+.todos li:nth-child(odd) .todo-detail {
+  left: 40px; }
+  .todos li:nth-child(odd) .todo-detail .triangle {
+    height: 0;
+    width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 7px;
+    border-right-color: #ebeff6;
+    position: absolute;
+    left: -14px;
+    top: 40%; }
+    .todos li:nth-child(odd) .todo-detail .triangle:after {
+      content: ' ';
+      display: block;
+      height: 0;
+      width: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 7px;
+      border-right-color: white;
+      position: absolute;
+      top: -7px;
+      right: -9px; }

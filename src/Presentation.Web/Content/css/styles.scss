@@ -180,11 +180,10 @@
 
     .todo-detail{
         position:absolute;
-        right: 40px;
-        top: -75%;
+        top: -95%;
 
-        width:200px;
-        max-width:300px;
+        min-width: 195px;
+        max-width: 500px;
         padding: 10px 10px 13px 10px;
 
         border: 1px solid $color-bordergrey;
@@ -196,6 +195,25 @@
             padding:0;
             margin: 0;
         }
+
+        h2 {
+            font-size: 1.4rem;
+            white-space: nowrap;
+        }
+
+        h3 {
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        p {
+            margin-top: 1em;
+            font-size: 1.2rem;
+        }
+    }
+
+    .todos li:nth-child(even) .todo-detail {
+        right: 40px;
 
         .triangle{
             @include triangle(14px, $color-bordergrey, right);
@@ -210,6 +228,27 @@
                 position: absolute;
                 top: -7px;
                 left: -9px;
+            }
+        }
+    }
+
+    .todos li:nth-child(odd) .todo-detail {
+
+        left: 40px;
+            
+        .triangle{
+            @include triangle(14px, $color-bordergrey, left);
+            position: absolute;
+            left: -14px;
+            top: 40%;
+
+            &:after {
+                content: ' ';
+                display: block;
+                @include triangle(14px, white, left);
+                position: absolute;
+                top: -7px;
+                right: -9px;
             }
         }
     }
