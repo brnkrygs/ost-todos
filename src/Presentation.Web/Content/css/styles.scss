@@ -52,6 +52,7 @@
         /*width: auto;*/
         width: 65%;
         background-color: $color-background;
+        padding-top: 100px;
     }
 
 /******************************
@@ -63,6 +64,7 @@
         height:100%;
         float:left;
         width:15%;
+        font-size: $font-size-label;
 
         h1{
             text-align: center;
@@ -126,13 +128,18 @@
 /******************************
  * Forms
  ******************************/
+    label, input, button, select {
+        font-size: $font-size-label;
+    }
+
     input, button, select{
         border-radius: 5px;
     }
 
     input, select{
-        padding: .3rem;
-        border: 1px solid $color-mediumgrey;
+        padding: .7rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid $color-bordergrey;
     }
 
     button{

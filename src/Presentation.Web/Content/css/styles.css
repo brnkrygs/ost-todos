@@ -1,4 +1,5 @@
 /* Custom colors */
+/* Fonts */
 /**********
  *
  *  Table of contents
@@ -42,7 +43,8 @@ a {
   float: left;
   /*width: auto;*/
   width: 65%;
-  background-color: #f9fafc; }
+  background-color: #f9fafc;
+  padding-top: 100px; }
 
 /******************************
  * Layout:Navigation
@@ -52,7 +54,8 @@ nav {
   background-color: #94cd63;
   height: 100%;
   float: left;
-  width: 15%; }
+  width: 15%;
+  font-size: 1.4rem; }
   nav h1 {
     text-align: center;
     margin: 0 auto; }
@@ -95,12 +98,16 @@ nav {
 /******************************
  * Forms
  ******************************/
+label, input, button, select {
+  font-size: 1.4rem; }
+
 input, button, select {
   border-radius: 5px; }
 
 input, select {
-  padding: .3rem;
-  border: 1px solid #717171; }
+  padding: .7rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ebeff6; }
 
 button {
   border: 0;
