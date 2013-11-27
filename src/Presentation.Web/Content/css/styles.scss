@@ -186,6 +186,11 @@
 
                 background-color:$color-lightgreen;
                 border-radius: 50%;
+
+                    text-align: center;
+                i {
+                    line-height: 30px;
+                }
             }
         }
     }

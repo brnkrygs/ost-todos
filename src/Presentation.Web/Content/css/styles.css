@@ -145,7 +145,10 @@ button {
       position: absolute;
       padding: 0;
       background-color: #94cd63;
-      border-radius: 50%; }
+      border-radius: 50%;
+      text-align: center; }
+      .todos li a i {
+        line-height: 30px; }
 
 .todo-detail {
   position: relative;
