@@ -52,7 +52,6 @@
         /*width: auto;*/
         width: 65%;
         background-color: $color-background;
-        padding-top: 100px;
     }
 
 /******************************
@@ -173,24 +172,27 @@
         list-style-type:none;
 
         li{
-            width:30px;
-            height:30px;
             position: relative;
+            display: block;
 
-            margin:0 0 100px 0;
-            padding:0;
+            a{
+                @include transform(translate(-50%,-50%));
+                top: 50%;
+                width:30px;
+                height:30px;
+                position: absolute;
 
-            background-color:$color-lightgreen;
-            border-radius: 50%;
+                padding:0;
+
+                background-color:$color-lightgreen;
+                border-radius: 50%;
+            }
         }
     }
 
     .todo-detail{
-        position:absolute;
-        top: -95%;
+        position:relative;
 
-        min-width: 195px;
-        max-width: 500px;
         padding: 10px 10px 13px 10px;
 
         border: 1px solid $color-bordergrey;
@@ -219,23 +221,25 @@
         }
 
         time {
-            position: absolute;
-            top: 23%;
+            position: relative;
         }
     }
 
     .todos li:nth-child(even) .todo-detail {
-        right: 40px;
+        /*right: 40px;*/
+        left: -100%;
+        margin-right: 50px;
 
         time {
-            right: -100px;
+            /*right: -100px;*/
         }
 
         .triangle{
             @include triangle(14px, $color-bordergrey, right);
+            @include transform(translateY(-50%));
             position: absolute;
             right: -14px;
-            top: 40%;
+            top: 50%;
 
             &:after {
                 content: ' ';
@@ -249,17 +253,20 @@
     }
 
     .todos li:nth-child(odd) .todo-detail {
-        left: 40px;
+        /*left: 40px;*/
+
+        margin-left: 50px;
 
         time {
-            left: -100px;
+            /*left: -100px;*/
         }
             
         .triangle{
             @include triangle(14px, $color-bordergrey, left);
+            @include transform(translateY(-50%));
             position: absolute;
             left: -14px;
-            top: 40%;
+            top: 50%;
 
             &:after {
                 content: ' ';

@@ -43,8 +43,7 @@ a {
   float: left;
   /*width: auto;*/
   width: 65%;
-  background-color: #f9fafc;
-  padding-top: 100px; }
+  background-color: #f9fafc; }
 
 /******************************
  * Layout:Navigation
@@ -132,19 +131,24 @@ button {
   padding: 0;
   list-style-type: none; }
   .todos li {
-    width: 30px;
-    height: 30px;
     position: relative;
-    margin: 0 0 100px 0;
-    padding: 0;
-    background-color: #94cd63;
-    border-radius: 50%; }
+    display: block; }
+    .todos li a {
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      top: 50%;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      padding: 0;
+      background-color: #94cd63;
+      border-radius: 50%; }
 
 .todo-detail {
-  position: absolute;
-  top: -95%;
-  min-width: 195px;
-  max-width: 500px;
+  position: relative;
   padding: 10px 10px 13px 10px;
   border: 1px solid #ebeff6;
   border-radius: 3px;
@@ -163,13 +167,14 @@ button {
     margin-top: 1em;
     font-size: 1.2rem; }
   .todo-detail time {
-    position: absolute;
-    top: 23%; }
+    position: relative; }
 
 .todos li:nth-child(even) .todo-detail {
-  right: 40px; }
+  /*right: 40px;*/
+  left: -100%;
+  margin-right: 50px; }
   .todos li:nth-child(even) .todo-detail time {
-    right: -100px; }
+    /*right: -100px;*/ }
   .todos li:nth-child(even) .todo-detail .triangle {
     height: 0;
     width: 0;
@@ -177,9 +182,14 @@ button {
     border-style: solid;
     border-width: 7px;
     border-left-color: #ebeff6;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
     position: absolute;
     right: -14px;
-    top: 40%; }
+    top: 50%; }
     .todos li:nth-child(even) .todo-detail .triangle:after {
       content: ' ';
       display: block;
@@ -194,9 +204,10 @@ button {
       left: -9px; }
 
 .todos li:nth-child(odd) .todo-detail {
-  left: 40px; }
+  /*left: 40px;*/
+  margin-left: 50px; }
   .todos li:nth-child(odd) .todo-detail time {
-    left: -100px; }
+    /*left: -100px;*/ }
   .todos li:nth-child(odd) .todo-detail .triangle {
     height: 0;
     width: 0;
@@ -204,9 +215,14 @@ button {
     border-style: solid;
     border-width: 7px;
     border-right-color: #ebeff6;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
     position: absolute;
     left: -14px;
-    top: 40%; }
+    top: 50%; }
     .todos li:nth-child(odd) .todo-detail .triangle:after {
       content: ' ';
       display: block;
