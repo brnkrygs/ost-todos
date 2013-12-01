@@ -59,6 +59,10 @@ nav, .sidebar-form {
   width: 65%;
   background-color: #f9fafc;
   height: 100%; }
+  *[role='main'] a {
+    color: white; }
+    *[role='main'] a:hover, *[role='main'] a:active {
+      color: white; }
 
 /******************************
  * Layout:Navigation

@@ -67,6 +67,13 @@
         width: 65%;
         background-color: $color-background;
         height: 100%;
+
+        a {
+            color: white;
+            &:hover, &:active {
+                color: white;
+            }
+        } 
     }
 
 /******************************
