@@ -1,5 +1,9 @@
-/* Custom colors */
-/* Fonts */
+/******************************
+ * Custom colors
+ ******************************/
+/******************************
+ * Fonts
+ ******************************/
 /**********
  *
  *  Table of contents
@@ -35,7 +39,7 @@ p {
 
 a {
   color: #f85b5e; }
-  a:hover, a:visited {
+  a:hover, a:active {
     color: #fba4a6; }
 
 /* To be dropped once new functionality is working */
@@ -69,6 +73,8 @@ nav {
     color: white;
     display: block;
     text-decoration: none; }
+    nav a:hover, nav a:active {
+      color: white; }
   nav a[role='portrait'] {
     margin: 20px auto;
     height: 70px;
