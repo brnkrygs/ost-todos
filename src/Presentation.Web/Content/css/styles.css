@@ -63,10 +63,12 @@ nav {
     display: block; }
   nav a[role='portrait'] {
     margin: 20px auto;
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     background-color: #f85b5e;
-    border-radius: 40px; }
+    border-radius: 35px; }
+    nav a[role='portrait'] span {
+      display: none; }
   nav ul {
     list-style: none;
     padding: 0;

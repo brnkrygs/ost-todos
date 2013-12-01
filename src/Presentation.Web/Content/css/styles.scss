@@ -77,10 +77,14 @@
 
         a[role='portrait']{
             margin:20px auto;
-            height: 80px;
-            width: 80px;
+            height: 70px;
+            width: 70px;
             background-color: $color-salmon;
-            border-radius:40px;
+            border-radius:35px;
+
+            span{
+                display: none;
+            }
         }
 
         ul{
