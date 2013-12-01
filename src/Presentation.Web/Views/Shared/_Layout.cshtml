@@ -13,12 +13,12 @@
 
     @Styles.Render( "~/Content/css" )
 </head>
-<body>
+<body data-ng-class="{ true:'logged-in', false:'anonymous' }[isLoggedIn()]">
 
     <nav>
         <h1>todo</h1>
 
-        <a role="portrait"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span>Example User: Profile</span></a>
+        <a role="portrait" href="/#/lists"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span>Example User: Profile</span></a>
 
         <ul>
             @*                            <li ng-hide="isLoggedIn()"><a href="/#login">Login</a></li>

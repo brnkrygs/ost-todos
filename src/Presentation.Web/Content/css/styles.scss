@@ -31,6 +31,7 @@
         margin:0;
         height:100%;
         position:absolute;
+        overflow: hidden;
     }
 
     p {
@@ -51,6 +52,10 @@
 
     /* To be dropped once new functionality is working */
     #obsolete-remove-me{ display:none; }
+
+    nav, .sidebar-form {
+        transition: margin ease-in-out .8s;
+    }
 
 /******************************
  * Layout:Main
@@ -116,6 +121,19 @@
             }
         }
 
+    }
+
+    .anonymous{ 
+        nav {
+            margin-left: -14%;
+            transition: margin ease-in-out .8s;
+        }
+
+        .sidebar-form {
+            padding-left: 19%;
+            margin-right: -19%;
+            transition: margin ease-in-out .8s;
+        }
     }
 
 /******************************
@@ -185,7 +203,7 @@
     }
 
 /******************************
- * Utility
+ * Utility Classes
  ******************************/
     .fa-center{
         height:80px;
