@@ -74,6 +74,15 @@
                 color: white;
             }
         } 
+
+		.todos li{
+			border-left: $color-mediumgrey 1px solid;
+		}
+
+		.todos li:last-child{
+			@include border-image(linear-gradient(to bottom, $color-mediumgrey, $color-mediumgrey 50%, $color-background 50%) 1);
+			border-width:0 0 0 1px;
+		}
     }
 
 /******************************

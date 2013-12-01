@@ -202,7 +202,9 @@
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\img\cat-photo.png" />
     <Content Include="Content\img\OST-Logo.png" />
-    <Content Include="Content\css\styles.css" />
+    <Content Include="Content\css\styles.css">
+      <DependentUpon>styles.scss</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />

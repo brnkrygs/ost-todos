@@ -63,6 +63,14 @@ nav, .sidebar-form {
     color: white; }
     *[role='main'] a:hover, *[role='main'] a:active {
       color: white; }
+  *[role='main'] .todos li {
+    border-left: #717171 1px solid; }
+  *[role='main'] .todos li:last-child {
+    -webkit-border-image: -webkit-linear-gradient(top, #717171, #717171 50%, #f9fafc 50%) 1;
+    -moz-border-image: -moz-linear-gradient(top, #717171, #717171 50%, #f9fafc 50%) 1;
+    -o-border-image: -o-linear-gradient(top, #717171, #717171 50%, #f9fafc 50%) 1;
+    border-image: linear-gradient(to bottom, #717171, #717171 50%, #f9fafc 50%) 1;
+    border-width: 0 0 0 1px; }
 
 /******************************
  * Layout:Navigation
@@ -275,3 +283,4 @@ button {
       position: absolute;
       top: -7px;
       right: -9px; }
+
