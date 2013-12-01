@@ -26,14 +26,23 @@
     body{
         font-family: 'Open Sans', sans-serif;
         color: $color-darkgrey;
+        background-color: $color-background;
         width: 100%;
         margin:0;
         height:100%;
         position:absolute;
     }
 
+    p {
+        font-size: 1.4rem;
+    }
+
     a{
-        text-decoration: none;
+        color: $color-salmon;
+
+        &:hover, &:visited {
+            color: lighten($color-salmon, 15%);
+        }
     }
 
     h1,h2,h3,h4,h5,h6{
@@ -52,6 +61,7 @@
         /*width: auto;*/
         width: 65%;
         background-color: $color-background;
+        height: 100%;
     }
 
 /******************************
@@ -73,6 +83,7 @@
         a{
             color: white;
             display:block;
+            text-decoration: none;
         }
 
         a[role='portrait']{
@@ -115,16 +126,10 @@
 
         input, label, select{
             width:90%;
-            display:block;
         }
 
         button{
             margin-top: 10px;
-            background-color: $color-darkgrey;
-
-            &:hover{
-                background-color: darken( $color-darkgrey, 30% );
-            }
         }
     }
 
@@ -132,6 +137,7 @@
  * Forms
  ******************************/
     label, input, button, select {
+        display:block;
         font-size: $font-size-label;
     }
 
@@ -143,6 +149,16 @@
         padding: .7rem;
         margin-bottom: 1.5rem;
         border: 1px solid $color-bordergrey;
+
+        &.ng-dirty.ng-invalid {
+            background-color: $color-error;
+            border: 2px solid darken($color-error, 50%);
+
+            &:focus {
+                border-color:darken($color-error, 50%);
+                outline: 0;
+            }
+        }
     }
 
     button{
@@ -153,10 +169,14 @@
         font-weight:bold;
 
         color: white;
-        background-color: $color-gold;
+        background-color: $color-darkgrey;
 
         &:hover{
-            background-color: lighten( $color-gold, 20% );
+            background-color: darken( $color-darkgrey, 30% );
+        }
+
+        &[disabled='disabled'] {
+            background-color: $color-lightgrey;
         }
     }
 

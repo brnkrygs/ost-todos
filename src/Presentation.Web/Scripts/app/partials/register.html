@@ -1,39 +1,22 @@
-﻿<div class="row">
-    <h1 class="text-center">Registration</h1>
-    <div class="span7 form form-center well">
-        <form name="registerForm" class="form-horizontal" ng-submit="register()">
+﻿<section>
+    <h1>Registration</h1>
 
-            <div class="control-group" ng-class="{error:registerForm.Email.$invalid}">
-                <label class="control-label" for="Email">Email: </label>
-                <div class="controls">
-                    <input ng-model="Email" type="email" id="Email" name="Email" value="" placeholder="email@address.com" required />
-                </div>
-            </div>
+    <form name="registerForm" data-ng-submit="register()">
 
-            <div class="control-group" ng-class="{error:registerForm.Name.$invalid}">
-                <label class="control-label" for="Name">Name: </label>
-                <div class="controls">
-                    <input type="text" ng-model="Name" id="Name" name="Name" value="" placeholder="Todo User" required />
-                </div>
-            </div>
+        <label for="email">Email: </label>
+        <input type="email" data-ng-model="Email" id="email" name="email" placeholder="email@address.com" required />
 
-            <div class="control-group">
-                <label class="control-label" for="Password">Password: </label>
-                <div class="controls">
-                    <input type="password" ng-model="Password" id="Password" name="Password" value="" required />
-                </div>
-            </div>
+        <label for="name">Name: </label>
+        <input type="text" data-ng-model="Name" id="name" name="name" placeholder="Todo User" required />
 
-            <div class="control-group">
-                <div class="controls">
-                    <button ng-disabled="registerForm.$invalid" type="submit" class="btn">Register</button>
-                </div>
-            </div>
+        <label for="password">Password: </label>
+        <input type="password" data-ng-model="Password" id="password" name="password" required />
 
-            <p>
-                <a href="/#login">Already have a login? Click here to sign in</a>
-            </p>
+        <button data-ng-disabled="registerForm.$invalid" type="submit">Register</button>
 
-        </form>
-    </div>
-</div>
+        <p>
+            <a href="/#login">Already have a login? Click here to sign in</a>
+        </p>
+
+    </form>
+</section>
