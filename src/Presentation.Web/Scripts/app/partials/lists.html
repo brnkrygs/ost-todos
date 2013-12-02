@@ -1,7 +1,7 @@
 ﻿<ul class="todos">
     <li data-ng-repeat="todo in lists[0].row[0].Todos">
         <a href="#">
-            <i class="fa fa-2x fa-plane"></i>
+            <i class="fa fa-2x" data-ng-class="getTaskClass( todo )"></i>
         </a>
 
         <div class="todo-detail">

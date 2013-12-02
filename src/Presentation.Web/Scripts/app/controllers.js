@@ -49,6 +49,22 @@
             });
         };
 
+        $scope.getTaskClass = function( task ) {
+            var classes = {
+                'trip':'fa-plane',
+                'meeting':'fa-file-o',
+                'appointment':'fa-user',
+                'call':'fa-phone',
+                'default':'fa-code',
+            };
+
+            console.log( 'getting task class for', task );
+
+            if ( typeof (task.Type) === "undefined" || task.Type === '' )
+                return classes['default'];
+            return classes[task.Type];
+        };
+
     }]).
     controller("ListCtrl", ["$scope", "ListTodo", "Todo", function ($scope, ListTodo, Todo) {
 
