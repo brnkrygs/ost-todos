@@ -4,13 +4,13 @@
     <form name="registerForm" data-ng-submit="register()">
 
         <label for="email">Email: </label>
-        <input type="email" data-ng-model="Email" id="email" name="email" placeholder="email@address.com" required />
+        <input type="email" data-ng-model="Email" id="email" name="email" placeholder="email@address.com" required tabindex="1" />
 
         <label for="name">Name: </label>
-        <input type="text" data-ng-model="Name" id="name" name="name" placeholder="Todo User" required />
+        <input type="text" data-ng-model="Name" id="name" name="name" placeholder="Todo User" required tabindex="2" />
 
         <label for="password">Password: </label>
-        <input type="password" data-ng-model="Password" id="password" name="password" required />
+        <input type="password" data-ng-model="Password" id="password" name="password" required tabindex="3" />
 
         <button data-ng-disabled="registerForm.$invalid" type="submit">Register</button>
 
