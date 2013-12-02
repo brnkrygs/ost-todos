@@ -119,6 +119,8 @@ nav {
       padding: 10px 0px; }
       nav ul li:hover {
         background: #7ac03d; }
+  nav .fa {
+    display: block; }
 
 .anonymous nav {
   margin-left: -14%;
