@@ -180,6 +180,15 @@ button {
 /******************************
  * Utility Classes
  ******************************/
+.box {
+  background-color: #94cd63;
+  color: white;
+  font-weight: bold;
+  margin: 120px auto;
+  height: 150px;
+  width: 200px;
+  position: relative; }
+
 .fa-center {
   height: 80px;
   width: 80px;
@@ -316,3 +325,4 @@ button {
   float: left; }
   .todos li:nth-child(odd) .todo-collapse time {
     left: -150px; }
+

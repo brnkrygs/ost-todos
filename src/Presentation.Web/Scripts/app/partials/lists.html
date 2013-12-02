@@ -1,4 +1,12 @@
-﻿<ul class="todos">
+﻿<div class=box>
+    <h2>Wake Up</h2>
+    <h2>me</h2>
+    <time>{{ my-current-time| date:'h:mm a' }}</time>
+    <button type="submit" class="btn btn-pause">Pause</button>
+    <button type="submit" class="btn btn-confirm">Confirm</button>
+</div>
+
+<ul class="todos">
     <li data-ng-repeat="todo in lists[0].row[0].Todos">
         <a href="#">
             <i class="fa fa-2x" data-ng-class="getTaskClass( todo )"></i>
@@ -6,11 +14,11 @@
 
         <div class="todo-detail">
             <div class="todo-collapse">
-                <h3>Type</h3>
+                <h2>{{ todo.Type }}</h2>
                 <h2>{{ todo.Title }}</h2>
-                <p>Description text would go here.</p>
+                <h2>{{ todo.Description }}</h2>
                 <div class="triangle"></div>
-                <time>10:00 am</time>
+                <time>{{ todo.TodoTime | date:'h:mm a' }}</time>
             </div>
         </div>
     </li>
