@@ -38,14 +38,6 @@
         font-size: 1.4rem;
     }
 
-    a{
-        color: $color-salmon;
-
-        &:hover, &:active {
-            color: lighten($color-salmon, 15%);
-        }
-    }
-
     h1,h2,h3,h4,h5,h6{
     }
 
@@ -58,10 +50,31 @@
     }
 
 /******************************
+ * Layout:Anonymous Form Sections
+ ******************************/
+.anonymous *[role='main'] section {
+    width: 225px;
+    margin: 0 auto;
+
+    a{
+        color: $color-salmon;
+
+        &:hover, &:active {
+            color: lighten($color-salmon, 15%);
+        }
+    }
+
+    label, input, select {
+        font-size: 2rem;
+    }
+}
+
+/******************************
  * Layout:Main
  ******************************/
 
     *[role='main']{
+        margin: 0 auto;
         float:left;
         /*width: auto;*/
         width: 65%;
@@ -83,6 +96,10 @@
 			@include border-image(linear-gradient(to bottom, $color-mediumgrey, $color-mediumgrey 50%, $color-background 50%) 1);
 			border-width:0 0 0 1px;
 		}
+    }
+
+    .anonymous *[role='main'] {
+        margin-left: 14%;
     }
 
 /******************************
@@ -174,6 +191,7 @@
 /******************************
  * Forms
  ******************************/
+
     label, input, button, select {
         display:block;
         font-size: $font-size-label;

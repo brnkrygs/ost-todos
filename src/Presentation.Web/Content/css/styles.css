@@ -38,11 +38,6 @@ body {
 p {
   font-size: 1.4rem; }
 
-a {
-  color: #f85b5e; }
-  a:hover, a:active {
-    color: #fba4a6; }
-
 /* To be dropped once new functionality is working */
 #obsolete-remove-me {
   display: none; }
@@ -51,9 +46,23 @@ nav, .sidebar-form {
   transition: margin ease-in-out .8s; }
 
 /******************************
+ * Layout:Anonymous Form Sections
+ ******************************/
+.anonymous *[role='main'] section {
+  width: 225px;
+  margin: 0 auto; }
+  .anonymous *[role='main'] section a {
+    color: #f85b5e; }
+    .anonymous *[role='main'] section a:hover, .anonymous *[role='main'] section a:active {
+      color: #fba4a6; }
+  .anonymous *[role='main'] section label, .anonymous *[role='main'] section input, .anonymous *[role='main'] section select {
+    font-size: 2rem; }
+
+/******************************
  * Layout:Main
  ******************************/
 *[role='main'] {
+  margin: 0 auto;
   float: left;
   /*width: auto;*/
   width: 65%;
@@ -71,6 +80,9 @@ nav, .sidebar-form {
     -o-border-image: -o-linear-gradient(top, #717171, #717171 50%, #f9fafc 50%) 1;
     border-image: linear-gradient(to bottom, #717171, #717171 50%, #f9fafc 50%) 1;
     border-width: 0 0 0 1px; }
+
+.anonymous *[role='main'] {
+  margin-left: 14%; }
 
 /******************************
  * Layout:Navigation
