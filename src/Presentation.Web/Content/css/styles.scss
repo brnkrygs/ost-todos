@@ -249,7 +249,8 @@
                 background-color:$color-lightgreen;
                 border-radius: 50%;
 
-                    text-align: center;
+                text-align: center;
+
                 i {
                     line-height: 30px;
                 }
@@ -261,17 +262,13 @@
         position:relative;
 
         @include clearfix;
-        
     }
 
     .todos li:nth-child(even) .todo-detail {
-        /*right: 40px;*/
-        left: -100%;
-        margin-right: 50px;
 
-        time {
-            /*right: -100px;*/
-        }
+        left: -100%;
+
+        margin-right: 50px;
 
         .triangle{
             @include triangle(14px, $color-bordergrey, right);
@@ -292,13 +289,8 @@
     }
 
     .todos li:nth-child(odd) .todo-detail {
-        /*left: 40px;*/
 
         margin-left: 50px;
-
-        time {
-            /*left: -100px;*/
-        }
             
         .triangle{
             @include triangle(14px, $color-bordergrey, left);
@@ -348,14 +340,25 @@
         }
 
         time {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            margin-top: 0;
+            @include transform(translateY(-50%));
         }
     }
 
     .todos li:nth-child(even) .todo-collapse {
         float: right;
+
+        time {
+            right: -150px;
+        }
     }
 
     .todos li:nth-child(odd) .todo-collapse {
         float: left;
+
+        time {
+            left: -150px;
+        }
     }

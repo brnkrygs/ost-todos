@@ -205,11 +205,8 @@ button {
     clear: both; }
 
 .todos li:nth-child(even) .todo-detail {
-  /*right: 40px;*/
   left: -100%;
   margin-right: 50px; }
-  .todos li:nth-child(even) .todo-detail time {
-    /*right: -100px;*/ }
   .todos li:nth-child(even) .todo-detail .triangle {
     height: 0;
     width: 0;
@@ -239,10 +236,7 @@ button {
       left: -9px; }
 
 .todos li:nth-child(odd) .todo-detail {
-  /*left: 40px;*/
   margin-left: 50px; }
-  .todos li:nth-child(odd) .todo-detail time {
-    /*left: -100px;*/ }
   .todos li:nth-child(odd) .todo-detail .triangle {
     height: 0;
     width: 0;
@@ -290,10 +284,21 @@ button {
     margin-top: 1em;
     font-size: 1.2rem; }
   .todo-collapse time {
-    position: relative; }
+    position: absolute;
+    top: 50%;
+    margin-top: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
 
 .todos li:nth-child(even) .todo-collapse {
   float: right; }
+  .todos li:nth-child(even) .todo-collapse time {
+    right: -150px; }
 
 .todos li:nth-child(odd) .todo-collapse {
   float: left; }
+  .todos li:nth-child(odd) .todo-collapse time {
+    left: -150px; }
