@@ -260,36 +260,8 @@
     .todo-detail{
         position:relative;
 
-        padding: 10px 10px 13px 10px;
-
-        border: 1px solid $color-bordergrey;
-        border-radius: 3px;
-        background-color: white;
-        box-shadow: 0 1px 3px 0 $color-lightgrey;
-
-        h2, h3, p, time{
-            padding:0;
-            margin: 0;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            white-space: nowrap;
-        }
-
-        h3 {
-            font-weight: normal;
-            white-space: nowrap;
-        }
-
-        p, time {
-            margin-top: 1em;
-            font-size: 1.2rem;
-        }
-
-        time {
-            position: relative;
-        }
+        @include clearfix;
+        
     }
 
     .todos li:nth-child(even) .todo-detail {
@@ -344,4 +316,46 @@
                 right: -9px;
             }
         }
+    }
+
+    .todo-collapse {
+
+        padding: 10px 10px 13px 10px;
+
+        border: 1px solid $color-bordergrey;
+        border-radius: 3px;
+        background-color: white;
+        box-shadow: 0 1px 3px 0 $color-lightgrey;
+
+        h2, h3, p, time{
+            padding:0;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            white-space: nowrap;
+        }
+
+        h3 {
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        p, time {
+            margin-top: 1em;
+            font-size: 1.2rem;
+        }
+
+        time {
+            position: relative;
+        }
+    }
+
+    .todos li:nth-child(even) .todo-collapse {
+        float: right;
+    }
+
+    .todos li:nth-child(odd) .todo-collapse {
+        float: left;
     }

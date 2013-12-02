@@ -197,25 +197,12 @@ button {
 
 .todo-detail {
   position: relative;
-  padding: 10px 10px 13px 10px;
-  border: 1px solid #ebeff6;
-  border-radius: 3px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #f0f0f0; }
-  .todo-detail h2, .todo-detail h3, .todo-detail p, .todo-detail time {
-    padding: 0;
-    margin: 0; }
-  .todo-detail h2 {
-    font-size: 1.4rem;
-    white-space: nowrap; }
-  .todo-detail h3 {
-    font-weight: normal;
-    white-space: nowrap; }
-  .todo-detail p, .todo-detail time {
-    margin-top: 1em;
-    font-size: 1.2rem; }
-  .todo-detail time {
-    position: relative; }
+  *zoom: 1; }
+  .todo-detail:before, .todo-detail:after {
+    content: " ";
+    display: table; }
+  .todo-detail:after {
+    clear: both; }
 
 .todos li:nth-child(even) .todo-detail {
   /*right: 40px;*/
@@ -284,3 +271,29 @@ button {
       top: -7px;
       right: -9px; }
 
+.todo-collapse {
+  padding: 10px 10px 13px 10px;
+  border: 1px solid #ebeff6;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #f0f0f0; }
+  .todo-collapse h2, .todo-collapse h3, .todo-collapse p, .todo-collapse time {
+    padding: 0;
+    margin: 0; }
+  .todo-collapse h2 {
+    font-size: 1.4rem;
+    white-space: nowrap; }
+  .todo-collapse h3 {
+    font-weight: normal;
+    white-space: nowrap; }
+  .todo-collapse p, .todo-collapse time {
+    margin-top: 1em;
+    font-size: 1.2rem; }
+  .todo-collapse time {
+    position: relative; }
+
+.todos li:nth-child(even) .todo-collapse {
+  float: right; }
+
+.todos li:nth-child(odd) .todo-collapse {
+  float: left; }
