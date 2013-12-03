@@ -24,18 +24,21 @@
         <h1>Timeline</h1>
     </header>
 
-    <form name="addTodoForm" ng-submit="addTodo(Title)">
+    <form name="addTodoForm" ng-submit="addTodo(newTodo)">
         <label>Name</label>
-        <input type="text" ng-model="Title" placeholder="Pick up the milk" give-focus required />
+        <input type="text" ng-model="newTodo.Title" placeholder="Pick up the milk" give-focus required />
+        
+         <label>Description</label>
+        <input type="text" ng-model="newTodo.Description" placeholder="What are you doing?" />
 
         <label>Date</label>
-        <input type="date" ng-model="datetime"></input>
+        <input type="date" ng-model="newTodo.datetime"></input>
 
         <label>Time</label>
         <input type="time"></input>
 
         <label>Type</label>
-        <select ng-model="type" ng-options="o.vala for o in options"></select>
+        <select ng-model="newTodo.type" ng-options="o.vala for o in options"></select>
 
         <button type="submit">Add Todo</button>
     </form>

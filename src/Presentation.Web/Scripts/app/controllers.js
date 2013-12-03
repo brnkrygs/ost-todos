@@ -71,15 +71,19 @@
             return classes[task.Type.toLowerCase()];
         };
 
-        $scope.addTodo = function ( title ) {
-            var todo = new ListTodo( { Title: title } );
+        $scope.newTodo = {};
+        $scope.addTodo = function ( modelTodo ) {
+
+            modelTodo.TodoTime = modelTodo.TodoDate + "T" + modelTodo.TodoClockTime + ":00";
+
+            var todo = new ListTodo( modelTodo );
+
             todo.$save( { listId: $scope.lists[0].row[0].Id }, function () {
                 $scope.lists[0].row[0].Todos.push( todo );
                 $scope.showAddForm = 0;
-                $scope.Title = "";
+                $scope.newTodo = {};
             } );
         };
-
     }]).
     controller("ListCtrl", ["$scope", "ListTodo", "Todo", function ($scope, ListTodo, Todo) {
 
