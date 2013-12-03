@@ -68,7 +68,7 @@
 
             if ( typeof (task.Type) === "undefined" || task.Type === '' )
                 return classes['default'];
-            return classes[task.Type];
+            return classes[task.Type.toLowerCase()];
         };
 
         $scope.addTodo = function ( title ) {
