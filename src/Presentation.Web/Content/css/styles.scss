@@ -94,6 +94,8 @@
         height:100%;
         float:left;
         width:15%;
+		min-width:100px;
+		max-width:100px;
         font-size: $font-size-label;
 
         h1{
@@ -112,11 +114,9 @@
         }
 
         a[role='portrait']{
-            margin:20px auto;
+            margin: 0 auto;
             height: 70px;
             width: 70px;
-            background-color: $color-salmon;
-            border-radius:35px;
 
             span{
                 display: none;
@@ -134,6 +134,10 @@
                 &:hover{
                     background: darken($color-lightgreen, 10%);
                 }
+
+				i{
+					width:100%;
+				}
             }
         }
 
@@ -345,3 +349,109 @@
             }
         }
     }
+
+/***********************
+ * Responsive Stuff
+ ***********************/
+
+/* using the checkbox hack to handle the menu. adds two pieces of non-semantic html, but gives a pure css drop down*/
+input[type=checkbox] {
+	display:none;
+}
+
+nav label { 
+	cursor: pointer;
+	user-select: none;
+	display: none;
+}
+
+@media screen and (max-width: 670px) {
+    nav {
+		position: relative;
+		width:100%;
+		max-width: 100%;
+		height:auto;
+		float:none;
+
+		h1{
+			float:left;
+			text-align:left;
+			position:relative;
+			display:inline-block;
+			width:50%;
+			min-height:2.25em;
+			padding:.45em;
+			font-size:1.1em;
+			margin:0;
+			background-color: $color-lightgreen;
+			top:0;
+		}
+
+		ul {
+			display: none;
+			height: 100%;
+		}
+
+		label {
+			position:relative;
+			display:inline-block;
+			width:50%;
+			min-height:2.25em;
+			padding:.45em;
+			font-size:1.1em;
+			margin:0;
+			background-color: $color-lightgreen;
+		}
+    
+		label:after {
+			position: absolute;
+			right: .25em;  
+			top: 0; 
+			content:"\2261";
+			font-size:1.8em;
+		}
+    
+		input:checked ~ ul {
+			display: block;
+			background-color:$color-lightgreen;
+			height:auto;
+			margin-top:0;
+    
+			> li {
+				width: 100%;
+				text-align:left;
+			
+				a[role='portrait']{
+					height:auto;
+					width:100%;
+					margin:0;
+
+					span{
+						display:inline;
+					}
+
+					img{
+						display:none;
+					}
+				}
+
+				i{
+					width:auto;
+					padding: 0 10px;
+				}	
+			}        
+		}
+	}
+
+	div[role="main"]{
+		float:none;
+		width:100%;
+		height:auto;
+	}
+
+	.sidebar-form{
+		float:none;
+		width:100%;
+		height:auto;
+	}
+}

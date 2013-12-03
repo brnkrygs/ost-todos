@@ -14,50 +14,41 @@
     @Styles.Render( "~/Content/css" )
 </head>
 <body data-ng-class="{ true:'logged-in', false:'anonymous' }[isLoggedIn()]" data-ng-cloak>
-
+    
+    
     <nav>
         <h1>todo</h1>
 
-        <a role="portrait" href="/#/lists"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span>Example User: Profile</span></a>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="navButton" onclick></label>
 
         <ul>
             @*                            <li ng-hide="isLoggedIn()"><a href="/#login">Login</a></li>
                             <li ng-hide="isLoggedIn()"><a href="/#register">Register</a></li>
                             <li><a ng-show="isLoggedIn()" href="#" ng-click="logout()">Sign Out</a></li>*@
             <li>
-                <a href="#"><i class="fa fa-eye"></i>
-                    <br />
-                    Discover</a>
+                <a role="portrait" href="/#/lists"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span><i class="fa fa-user"></i>Profile</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-flask"></i>
-                    <br />
-                    UI Kit</a>
+                <a href="#"><i class="fa fa-eye"></i>Discover</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-file-text-o"></i>
-                    <br />
-                    Pages</a>
+                <a href="#"><i class="fa fa-flask"></i>UI Kit</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-envelope-o"></i>
-                    <br />
-                    Mail</a>
+                <a href="#"><i class="fa fa-file-text-o"></i>Pages</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-tasks"></i>
-                    <br />
-                    Tasks</a>
+                <a href="#"><i class="fa fa-envelope-o"></i>Mail</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-pencil"></i>
-                    <br />
-                    Notes</a>
+                <a href="#"><i class="fa fa-tasks"></i>Tasks</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-clock-o"></i>
-                    <br />
-                    Timeline</a>
+                <a href="#"><i class="fa fa-pencil"></i>Notes</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-clock-o"></i>Timeline</a>
             </li>
         </ul>
     </nav>
