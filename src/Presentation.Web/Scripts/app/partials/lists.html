@@ -10,15 +10,15 @@
     
     <ul class="todos">
         <li data-ng-repeat="todo in lists[0].row[0].Todos">
-            <a href="#">
+            <a href="/#/lists">
                 <i class="fa fa-2x" data-ng-class="getTaskClass( todo )"></i>
             </a>
 
             <div class="todo-detail">
                 <div class="todo-collapse">
-                    <h2>{{ todo.Type }}</h2>
+                    <h3>{{ todo.Type }}</h3>
                     <h2>{{ todo.Title }}</h2>
-                    <h2>{{ todo.Description }}</h2>
+                    <p>{{ todo.Description }}</p>
                     <div class="triangle"></div>
                     <time>{{ todo.TodoTime | date:'h:mm a' }}</time>
                 </div>
