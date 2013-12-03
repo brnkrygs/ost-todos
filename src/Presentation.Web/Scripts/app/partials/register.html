@@ -1,22 +1,26 @@
-﻿<section>
-    <h1>Registration</h1>
+﻿<div role="main">
+    <section>
+        <h1>Registration</h1>
 
-    <form name="registerForm" data-ng-submit="register()">
+        <form name="registerForm" data-ng-submit="register()">
 
-        <label for="email">Email: </label>
-        <input type="email" data-ng-model="Email" id="email" name="email" placeholder="email@address.com" required tabindex="1" />
+            <label for="email">Email: </label>
+            <input type="email" data-ng-model="Email" id="email" name="email" placeholder="email@address.com" required tabindex="1" />
 
-        <label for="name">Name: </label>
-        <input type="text" data-ng-model="Name" id="name" name="name" placeholder="Todo User" required tabindex="2" />
+            <label for="name">Name: </label>
+            <input type="text" data-ng-model="Name" id="name" name="name" placeholder="Todo User" required tabindex="2" />
 
-        <label for="password">Password: </label>
-        <input type="password" data-ng-model="Password" id="password" name="password" required tabindex="3" />
+            <label for="password">Password: </label>
+            <input type="password" data-ng-model="Password" id="password" name="password" required tabindex="3" />
 
-        <button data-ng-disabled="registerForm.$invalid" type="submit">Register</button>
+            <button data-ng-disabled="registerForm.$invalid" type="submit">Register</button>
 
-        <p>
-            <a href="/#login">Already have a login? Click here to sign in</a>
-        </p>
+            <p>
+                <a href="/#login">Already have a login? Click here to sign in</a>
+            </p>
 
-    </form>
-</section>
+        </form>
+    </section>
+</div>
+
+<sidebar-form></sidebar-form>

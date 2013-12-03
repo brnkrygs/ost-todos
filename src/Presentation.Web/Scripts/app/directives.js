@@ -56,4 +56,14 @@
                 });
             }
         };
+    }).directive('sidebarForm', function() {
+        return {            
+            restrict: 'E',
+            replace: true,
+            link: function( scope, elem, attrs ) {
+                console.log( 'sidebarForm activated' );
+                console.log( scope );
+            },
+            templateUrl: '/Scripts/app/partials/sidebar-form.html'
+        };
     });
