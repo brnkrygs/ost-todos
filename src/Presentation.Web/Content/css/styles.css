@@ -429,7 +429,8 @@ nav label {
             display: none; }
         nav input:checked ~ ul > li i {
           width: auto;
-          padding: 0 10px; }
+          padding: 0 10px;
+          display: inline; }
 
   div[role="main"] {
     float: none;
