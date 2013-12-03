@@ -184,13 +184,42 @@ button {
  * Utility Classes
  ******************************/
 .box {
+  margin: 2rem auto 0 auto;
+  width: 300px;
+  padding: .4rem 1.2rem 1.2rem 1.2rem;
   background-color: #94cd63;
   color: white;
-  font-weight: bold;
-  margin: 0 auto;
-  height: 150px;
-  width: 200px;
-  position: relative; }
+  border: 1px solid #94cd63;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px 0 #f0f0f0; }
+  .box h2, .box time {
+    padding: 0;
+    margin: 0; }
+  .box time {
+    font-size: 1.4rem;
+    margin-bottom: .6em;
+    display: inline-block;
+    line-height: 28px;
+    height: 28px; }
+    .box time i {
+      border: 2px solid white;
+      border-radius: 14px;
+      width: 28px;
+      height: 28px;
+      font-size: 1.6rem;
+      background-color: #92CF5C; }
+      .box time i:before {
+        position: relative;
+        top: .4rem;
+        left: .4rem; }
+  .box .currentTime {
+    font-size: 2.4rem;
+    margin-right: .75em;
+    margin-top: .2em; }
+  .box button {
+    display: inline;
+    background-color: #f9fafc;
+    color: #575757; }
 
 .fa-center {
   height: 80px;
@@ -204,6 +233,10 @@ button {
   .todos li {
     position: relative;
     display: block; }
+    .todos li:before {
+      display: block;
+      content: '';
+      border-left: 1px solid blue; }
     .todos li a {
       -webkit-transform: translate(-50%, -50%);
       -moz-transform: translate(-50%, -50%);

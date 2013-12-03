@@ -1,10 +1,11 @@
 ﻿<div role="main">
     <div class="box">
+        <time><i class="fa fa-bell"></i> 7:30 am</time>
         <h2>Wake Up</h2>
-        <h2>me</h2>
-        <time>{{ my-current-time| date:'h:mm a' }}</time>
-        <button type="submit" class="btn btn-pause">Pause</button>
-        <button type="submit" class="btn btn-confirm">Confirm</button>
+        <h2>Me</h2>
+        <time class="currentTime">{{ my-current-time| date:'h:mm a' }}</time>
+        <button type="submit"><i class="fa fa-pause"></i> Pause</button>
+        <button type="submit"><i class="fa fa-check"></i> Confirm</button>
     </div>
     
     <ul class="todos">

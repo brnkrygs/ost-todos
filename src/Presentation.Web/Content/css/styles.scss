@@ -253,14 +253,60 @@
  ******************************/
 
     .box {
+        margin: 2rem auto 0 auto;
+        width: 300px;
+
+        padding: .4rem 1.2rem 1.2rem 1.2rem;
+
         background-color:#94cd63;
         color:white;
-        font-weight:bold;
-        margin:0 auto;
-        height:150px;
-        width: 200px;
-		position: relative;
+
+        border: 1px solid $color-lightgreen;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px 0 $color-lightgrey;
+
+        h2, time {
+            padding: 0;
+            margin: 0;
+        }
+
+        time {
+            font-size: 1.4rem;
+            margin-bottom: .6em;
+            display: inline-block;
+            line-height: 28px;
+            height: 28px;
+
+            i {
+                border: 2px solid white;
+                border-radius: 14px;
+                width: 28px;
+                height: 28px;
+                font-size: 1.6rem;
+                background-color: #92CF5C;
+
+                &:before {
+                    position: relative;
+                    top: .4rem;
+                    left: .4rem;
+                }
+            }
+        }
+
+         .currentTime {
+             font-size: 2.4rem;
+             margin-right: .75em;
+             margin-top: .2em;
+         }
+
+
+        button {
+            display: inline;
+            background-color: $color-background;
+            color: $color-darkgrey;
+        }
     }
+
     .fa-center{
         height:80px;
         width:80px;
@@ -276,6 +322,12 @@
         li{
             position: relative;
             display: block;
+
+            &:before {
+                display: block;
+                content: '';
+                border-left: 1px solid blue;
+            }
 
             a{
                 @include transform(translate(-50%,-50%));
