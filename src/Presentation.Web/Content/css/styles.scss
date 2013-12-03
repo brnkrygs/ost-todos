@@ -111,7 +111,7 @@
         background-color: $color-lightgreen;
         height:100%;
         float:left;
-        width:15%;
+        /*width:15%;*/
         min-width:100px;
 		max-width:100px;
 
@@ -168,13 +168,7 @@
 
     .anonymous{ 
         nav {
-            margin-left: -14%;
-            transition: margin ease-in-out .8s;
-        }
-
-        .sidebar-form {
-            padding-left: 19%;
-            margin-right: -19%;
+            margin-left: -85px;
             transition: margin ease-in-out .8s;
         }
     }
@@ -195,6 +189,14 @@
 
         button{
             margin-top: 10px;
+        }
+    }
+
+    .anonymous{ 
+        .sidebar-form {
+            padding-left: 19%;
+            margin-right: -19%;
+            transition: margin ease-in-out .8s;
         }
     }
 
