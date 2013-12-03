@@ -565,4 +565,14 @@ nav label {
 		width:100%;
 		height:auto;
 	}
+
+    .anonymous {
+        nav, .sidebar-form {
+            display: none;
+        }
+
+        div[role='main'] {
+            margin: 0;
+        }
+    }
 }

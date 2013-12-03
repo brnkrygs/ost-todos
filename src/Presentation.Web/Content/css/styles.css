@@ -446,4 +446,9 @@ nav label {
   .sidebar-form {
     float: none;
     width: 100%;
-    height: auto; } }
+    height: auto; }
+
+  .anonymous nav, .anonymous .sidebar-form {
+    display: none; }
+  .anonymous div[role='main'] {
+    margin: 0; } }
