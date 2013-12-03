@@ -341,16 +341,16 @@
                 i {
                     line-height: 30px;
                 }
-
-                &:first-child {
-                    top: 60%;
-                }
             }
 
             &:first-child:before {
                 content: '';
                 height: 20px;
                 display: block;
+            }
+
+            &:first-child a {
+                @include transform(translate(-50%,-14%));
             }
         }
     }
