@@ -38,10 +38,6 @@ body {
 p {
   font-size: 1.4rem; }
 
-/* To be dropped once new functionality is working */
-#obsolete-remove-me {
-  display: none; }
-
 nav, .sidebar-form {
   transition: margin ease-in-out .8s; }
 
@@ -61,6 +57,9 @@ nav, .sidebar-form {
 /******************************
  * Layout:Main
  ******************************/
+.ng-view {
+  height: 100%; }
+
 *[role='main'] {
   margin: 0 auto;
   float: left;

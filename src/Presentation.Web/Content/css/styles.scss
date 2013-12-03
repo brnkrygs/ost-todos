@@ -41,10 +41,6 @@
     h1,h2,h3,h4,h5,h6{
     }
 
-
-    /* To be dropped once new functionality is working */
-    #obsolete-remove-me{ display:none; }
-
     nav, .sidebar-form {
         transition: margin ease-in-out .8s;
     }
@@ -72,6 +68,10 @@
 /******************************
  * Layout:Main
  ******************************/
+
+    .ng-view{
+        height: 100%;
+    }
 
     *[role='main']{
         margin: 0 auto;
