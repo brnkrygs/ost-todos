@@ -48,6 +48,14 @@
                 self.setLists();
             });
         };
+        
+        $scope.options = [
+            { vala: "Meeting", valb: "meeting" },
+            { vala: "Trip", valb: "trip" },
+            { vala: "Appointment", valb: "appointment" },
+            { vala: "Call", valb: "call" },
+            { vala: "Default", valb: "default" }
+        ];
 
         $scope.getTaskClass = function( task ) {
             var classes = {
