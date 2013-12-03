@@ -17,10 +17,14 @@
 
     <nav>
         <h1>todo</h1>
-
-        <a role="portrait" href="/#/lists"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span>Example User: Profile</span></a>
+        
+        <input type="checkbox" id="menu">
+        <label for="menu" class="navButton" onclick></label>
 
         <ul>
+            <li>
+                <a role="portrait" href="/#/lists"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span>Example User: Profile</span></a>
+            </li>
             <li><a data-ng-show="isLoggedIn()" href="#" data-ng-click="logout()"><i class="fa fa-sign-out"></i> Sign Out</a></li>
             <li>
                 <a href="#/lists"><i class="fa fa-eye"></i> Discover</a>

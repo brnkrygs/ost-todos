@@ -12,6 +12,7 @@
  *  2. Layout styles for elements and classes
  *  3. Form styles
  *  4. Module/widget/utility classes
+ *  5. Responsive stuff
  *
  */
 /******************************
@@ -92,6 +93,8 @@ nav {
   height: 100%;
   float: left;
   width: 15%;
+  min-width: 100px;
+  max-width: 100px;
   font-size: 1.4rem; }
   nav h1 {
     text-align: center;
@@ -103,11 +106,9 @@ nav {
     nav a:hover, nav a:active {
       color: white; }
   nav a[role='portrait'] {
-    margin: 20px auto;
+    margin: 0 auto;
     height: 70px;
-    width: 70px;
-    background-color: #f85b5e;
-    border-radius: 35px; }
+    width: 70px; }
     nav a[role='portrait'] span {
       display: none; }
   nav ul {
@@ -118,6 +119,8 @@ nav {
       padding: 10px 0px; }
       nav ul li:hover {
         background: #7ac03d; }
+      nav ul li i {
+        width: 100%; }
   nav .fa {
     display: block; }
 
@@ -324,3 +327,82 @@ button {
   float: left; }
   .todos li:nth-child(odd) .todo-collapse time {
     left: -150px; }
+
+/***********************
+* Responsive Stuff
+***********************/
+/* using the checkbox hack to handle the menu. adds two pieces of non-semantic html, but gives a pure css drop down*/
+input[type=checkbox] {
+  display: none; }
+
+nav label {
+  cursor: pointer;
+  user-select: none;
+  display: none; }
+
+@media screen and (max-width: 670px) {
+  nav {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    float: none; }
+    nav h1 {
+      float: left;
+      text-align: left;
+      position: relative;
+      display: inline-block;
+      width: 50%;
+      min-height: 2.25em;
+      padding: .45em;
+      font-size: 1.1em;
+      margin: 0;
+      background-color: #94cd63;
+      top: 0; }
+    nav ul {
+      display: none;
+      height: 100%; }
+    nav label {
+      position: relative;
+      display: inline-block;
+      width: 50%;
+      min-height: 2.25em;
+      padding: .45em;
+      font-size: 1.1em;
+      margin: 0;
+      background-color: #94cd63; }
+    nav label:after {
+      position: absolute;
+      right: .25em;
+      top: 0;
+      content: "\2261";
+      font-size: 1.8em; }
+    nav input:checked ~ ul {
+      display: block;
+      background-color: #94cd63;
+      height: auto;
+      margin-top: 0; }
+      nav input:checked ~ ul > li {
+        width: 100%;
+        text-align: left; }
+        nav input:checked ~ ul > li a[role='portrait'] {
+          height: auto;
+          width: 100%;
+          margin: 0; }
+          nav input:checked ~ ul > li a[role='portrait'] span {
+            display: inline; }
+          nav input:checked ~ ul > li a[role='portrait'] img {
+            display: none; }
+        nav input:checked ~ ul > li i {
+          width: auto;
+          padding: 0 10px; }
+
+  div[role="main"] {
+    float: none;
+    width: 100%;
+    height: auto; }
+
+  .sidebar-form {
+    float: none;
+    width: 100%;
+    height: auto; } }
