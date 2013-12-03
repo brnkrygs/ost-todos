@@ -21,7 +21,7 @@ namespace Presentation.Web
                 "~/Scripts/app/*.js"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Styles/css").Include(
                 "~/Content/css/normalize.css",
                 "~/Content/css/styles.css"
                 ));

@@ -26,6 +26,19 @@ namespace Presentation.Web.Controllers
         public IEnumerable<TodoListDisplay> Get()
         {
             var todos = _repo.FindBy(x => x.Owner == LoadUser());
+            if (todos.Count == 0)
+            {
+                var entity = new TodoList()
+                {
+                    Name = "list1",
+                    ListTime = DateTime.Now,
+                    Owner = LoadUser()
+                };
+                _repo.Store(entity);
+
+                todos = _repo.FindBy(x => x.Owner == LoadUser());
+            }
+
             var displays = todos.Select(x => new TodoListDisplay()
                 {
                     Name = x.Name,

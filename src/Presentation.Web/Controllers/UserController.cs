@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Core.Domain.Model;
+using Core.Domain.Model.TodoLists;
 using Core.Domain.Model.Users;
 using Presentation.Web.Models.Input;
 using Presentation.Web.Services;
@@ -10,6 +12,9 @@ namespace Presentation.Web.Controllers
     {
         protected IRepository<User> Users;
         protected IAuthenticationService Auth;
+        protected IRepository<TodoList> repo;
+
+
 
         public UserController(IRepository<User> users, IAuthenticationService auth)
         {
@@ -35,7 +40,6 @@ namespace Presentation.Web.Controllers
             Users.Store(user);
 
             Auth.Authenticate(user, ControllerContext.HttpContext.Response);
-
             return RedirectToAction("Index", "Home");
         }
 
