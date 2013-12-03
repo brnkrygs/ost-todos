@@ -219,6 +219,7 @@
     <Content Include="Scripts\app\partials\lists.html" />
     <Content Include="Scripts\app\partials\login.html" />
     <Content Include="Scripts\app\partials\register.html" />
+    <Content Include="Scripts\app\partials\sidebar-form.html" />
     <Content Include="Scripts\app\services.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />

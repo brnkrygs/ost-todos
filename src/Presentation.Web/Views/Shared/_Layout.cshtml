@@ -14,72 +14,49 @@
     @Styles.Render( "~/Content/css" )
 </head>
 <body data-ng-class="{ true:'logged-in', false:'anonymous' }[isLoggedIn()]" data-ng-cloak>
-    
-    
+
     <nav>
         <h1>todo</h1>
-
+        
         <input type="checkbox" id="menu">
         <label for="menu" class="navButton" onclick></label>
 
         <ul>
-            @*                            <li ng-hide="isLoggedIn()"><a href="/#login">Login</a></li>
-                            <li ng-hide="isLoggedIn()"><a href="/#register">Register</a></li>
-                            <li><a ng-show="isLoggedIn()" href="#" ng-click="logout()">Sign Out</a></li>*@
             <li>
-                <a role="portrait" href="/#/lists"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span><i class="fa fa-user"></i>Profile</span></a>
+                <a role="portrait" href="/#/lists"><img src="@Url.Content( "~/Content/img/cat-photo.png" )" alt="Example User" title="Example User"/><span>Example User: Profile</span></a>
+            </li>
+            <li><a data-ng-show="isLoggedIn()" href="#" data-ng-click="logout()"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+            <li>
+                <a href="#/lists"><i class="fa fa-eye"></i> Discover</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-eye"></i>Discover</a>
+                <a href="/#/lists"><i class="fa fa-flask"></i> UI Kit</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-flask"></i>UI Kit</a>
+                <a href="/#/lists"><i class="fa fa-file-text-o"></i> Pages</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-file-text-o"></i>Pages</a>
+                <a href="/#/lists"><i class="fa fa-envelope-o"></i> Mail</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-envelope-o"></i>Mail</a>
+                <a href="/#/lists"><i class="fa fa-tasks"></i> Tasks</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-tasks"></i>Tasks</a>
+                <a href="/#/lists"><i class="fa fa-pencil"></i> Notes</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-pencil"></i>Notes</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-clock-o"></i>Timeline</a>
+                <a href="/#/lists"><i class="fa fa-clock-o"></i> Timeline</a>
             </li>
         </ul>
     </nav>
 
-    <div role="main" ng-view>
+    <div class="ng-view">
 
         @RenderBody()
-
+        
     </div>
 
-    <section class="sidebar-form">
-        <header>
-            <h1>Timeline</h1>
-        </header>
-        <form>
-            <label>Name</label>
-            <input type="text"></input>
-
-            <label>Date</label>
-            <input type="date"></input>
-
-            <label>Time</label>
-            <input type="time"></input>
-
-            <label>Type</label>
-            <select></select>
-
-            <button>Add an Event</button>
-        </form>
-
-    </section>
+    
 
     @Scripts.Render( "~/bundles/jquery" )
     @Scripts.Render( "~/bundles/angular" )

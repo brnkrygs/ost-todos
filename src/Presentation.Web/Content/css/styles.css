@@ -12,6 +12,7 @@
  *  2. Layout styles for elements and classes
  *  3. Form styles
  *  4. Module/widget/utility classes
+ *  5. Responsive stuff
  *
  */
 /******************************
@@ -38,22 +39,30 @@ body {
 p {
   font-size: 1.4rem; }
 
-a {
-  color: #f85b5e; }
-  a:hover, a:active {
-    color: #fba4a6; }
-
-/* To be dropped once new functionality is working */
-#obsolete-remove-me {
-  display: none; }
-
 nav, .sidebar-form {
   transition: margin ease-in-out .8s; }
 
 /******************************
+ * Layout:Anonymous Form Sections
+ ******************************/
+.anonymous *[role='main'] section {
+  width: 225px;
+  margin: 0 auto; }
+  .anonymous *[role='main'] section a {
+    color: #f85b5e; }
+    .anonymous *[role='main'] section a:hover, .anonymous *[role='main'] section a:active {
+      color: #fba4a6; }
+  .anonymous *[role='main'] section label, .anonymous *[role='main'] section input, .anonymous *[role='main'] section select {
+    font-size: 2rem; }
+
+/******************************
  * Layout:Main
  ******************************/
+.ng-view {
+  height: 100%; }
+
 *[role='main'] {
+  margin: 0 auto;
   float: left;
   /*width: auto;*/
   width: 65%;
@@ -72,6 +81,9 @@ nav, .sidebar-form {
     border-image: linear-gradient(to bottom, #717171, #717171 50%, #f9fafc 50%) 1;
     border-width: 0 0 0 1px; }
 
+.anonymous *[role='main'] {
+  margin-left: 14%; }
+
 /******************************
  * Layout:Navigation
  ******************************/
@@ -81,6 +93,8 @@ nav {
   height: 100%;
   float: left;
   width: 15%;
+  min-width: 100px;
+  max-width: 100px;
   font-size: 1.4rem; }
   nav h1 {
     text-align: center;
@@ -92,11 +106,9 @@ nav {
     nav a:hover, nav a:active {
       color: white; }
   nav a[role='portrait'] {
-    margin: 20px auto;
+    margin: 0 auto;
     height: 70px;
-    width: 70px;
-    background-color: #f85b5e;
-    border-radius: 35px; }
+    width: 70px; }
     nav a[role='portrait'] span {
       display: none; }
   nav ul {
@@ -107,6 +119,10 @@ nav {
       padding: 10px 0px; }
       nav ul li:hover {
         background: #7ac03d; }
+      nav ul li i {
+        width: 100%; }
+  nav .fa {
+    display: block; }
 
 .anonymous nav {
   margin-left: -14%;
@@ -166,6 +182,15 @@ button {
 /******************************
  * Utility Classes
  ******************************/
+.box {
+  background-color: #94cd63;
+  color: white;
+  font-weight: bold;
+  margin: 0 auto;
+  height: 150px;
+  width: 200px;
+  position: relative; }
+
 .fa-center {
   height: 80px;
   width: 80px;
@@ -197,32 +222,16 @@ button {
 
 .todo-detail {
   position: relative;
-  padding: 10px 10px 13px 10px;
-  border: 1px solid #ebeff6;
-  border-radius: 3px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #f0f0f0; }
-  .todo-detail h2, .todo-detail h3, .todo-detail p, .todo-detail time {
-    padding: 0;
-    margin: 0; }
-  .todo-detail h2 {
-    font-size: 1.4rem;
-    white-space: nowrap; }
-  .todo-detail h3 {
-    font-weight: normal;
-    white-space: nowrap; }
-  .todo-detail p, .todo-detail time {
-    margin-top: 1em;
-    font-size: 1.2rem; }
-  .todo-detail time {
-    position: relative; }
+  *zoom: 1; }
+  .todo-detail:before, .todo-detail:after {
+    content: " ";
+    display: table; }
+  .todo-detail:after {
+    clear: both; }
 
 .todos li:nth-child(even) .todo-detail {
-  /*right: 40px;*/
   left: -100%;
   margin-right: 50px; }
-  .todos li:nth-child(even) .todo-detail time {
-    /*right: -100px;*/ }
   .todos li:nth-child(even) .todo-detail .triangle {
     height: 0;
     width: 0;
@@ -252,10 +261,7 @@ button {
       left: -9px; }
 
 .todos li:nth-child(odd) .todo-detail {
-  /*left: 40px;*/
   margin-left: 50px; }
-  .todos li:nth-child(odd) .todo-detail time {
-    /*left: -100px;*/ }
   .todos li:nth-child(odd) .todo-detail .triangle {
     height: 0;
     width: 0;
@@ -284,3 +290,119 @@ button {
       top: -7px;
       right: -9px; }
 
+.todo-collapse {
+  padding: 10px 10px 13px 10px;
+  border: 1px solid #ebeff6;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #f0f0f0; }
+  .todo-collapse h2, .todo-collapse h3, .todo-collapse p, .todo-collapse time {
+    padding: 0;
+    margin: 0; }
+  .todo-collapse h2 {
+    font-size: 1.4rem;
+    white-space: nowrap; }
+  .todo-collapse h3 {
+    font-weight: normal;
+    white-space: nowrap; }
+  .todo-collapse p, .todo-collapse time {
+    margin-top: 1em;
+    font-size: 1.2rem; }
+  .todo-collapse time {
+    position: absolute;
+    top: 50%;
+    margin-top: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+.todos li:nth-child(even) .todo-collapse {
+  float: right; }
+  .todos li:nth-child(even) .todo-collapse time {
+    right: -150px; }
+
+.todos li:nth-child(odd) .todo-collapse {
+  float: left; }
+  .todos li:nth-child(odd) .todo-collapse time {
+    left: -150px; }
+
+/***********************
+* Responsive Stuff
+***********************/
+/* using the checkbox hack to handle the menu. adds two pieces of non-semantic html, but gives a pure css drop down*/
+input[type=checkbox] {
+  display: none; }
+
+nav label {
+  cursor: pointer;
+  user-select: none;
+  display: none; }
+
+@media screen and (max-width: 670px) {
+  nav {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    float: none; }
+    nav h1 {
+      float: left;
+      text-align: left;
+      position: relative;
+      display: inline-block;
+      width: 50%;
+      min-height: 2.25em;
+      padding: .45em;
+      font-size: 1.1em;
+      margin: 0;
+      background-color: #94cd63;
+      top: 0; }
+    nav ul {
+      display: none;
+      height: 100%; }
+    nav label {
+      position: relative;
+      display: inline-block;
+      width: 50%;
+      min-height: 2.25em;
+      padding: .45em;
+      font-size: 1.1em;
+      margin: 0;
+      background-color: #94cd63; }
+    nav label:after {
+      position: absolute;
+      right: .25em;
+      top: 0;
+      content: "\2261";
+      font-size: 1.8em; }
+    nav input:checked ~ ul {
+      display: block;
+      background-color: #94cd63;
+      height: auto;
+      margin-top: 0; }
+      nav input:checked ~ ul > li {
+        width: 100%;
+        text-align: left; }
+        nav input:checked ~ ul > li a[role='portrait'] {
+          height: auto;
+          width: 100%;
+          margin: 0; }
+          nav input:checked ~ ul > li a[role='portrait'] span {
+            display: inline; }
+          nav input:checked ~ ul > li a[role='portrait'] img {
+            display: none; }
+        nav input:checked ~ ul > li i {
+          width: auto;
+          padding: 0 10px; }
+
+  div[role="main"] {
+    float: none;
+    width: 100%;
+    height: auto; }
+
+  .sidebar-form {
+    float: none;
+    width: 100%;
+    height: auto; } }

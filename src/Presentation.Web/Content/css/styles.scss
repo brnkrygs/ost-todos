@@ -9,6 +9,7 @@
  *  2. Layout styles for elements and classes
  *  3. Form styles
  *  4. Module/widget/utility classes
+ *  5. Responsive stuff
  *
  */
 
@@ -38,6 +39,20 @@
         font-size: 1.4rem;
     }
 
+    h1,h2,h3,h4,h5,h6{
+    }
+
+    nav, .sidebar-form {
+        transition: margin ease-in-out .8s;
+    }
+
+/******************************
+ * Layout:Anonymous Form Sections
+ ******************************/
+.anonymous *[role='main'] section {
+    width: 225px;
+    margin: 0 auto;
+
     a{
         color: $color-salmon;
 
@@ -46,22 +61,21 @@
         }
     }
 
-    h1,h2,h3,h4,h5,h6{
+    label, input, select {
+        font-size: 2rem;
     }
-
-
-    /* To be dropped once new functionality is working */
-    #obsolete-remove-me{ display:none; }
-
-    nav, .sidebar-form {
-        transition: margin ease-in-out .8s;
-    }
+}
 
 /******************************
  * Layout:Main
  ******************************/
 
+    .ng-view{
+        height: 100%;
+    }
+
     *[role='main']{
+        margin: 0 auto;
         float:left;
         /*width: auto;*/
         width: 65%;
@@ -85,6 +99,10 @@
 		}
     }
 
+    .anonymous *[role='main'] {
+        margin-left: 14%;
+    }
+
 /******************************
  * Layout:Navigation
  ******************************/
@@ -94,8 +112,9 @@
         height:100%;
         float:left;
         width:15%;
-		min-width:100px;
+        min-width:100px;
 		max-width:100px;
+
         font-size: $font-size-label;
 
         h1{
@@ -121,6 +140,7 @@
             span{
                 display: none;
             }
+
         }
 
         ul{
@@ -135,12 +155,15 @@
                     background: darken($color-lightgreen, 10%);
                 }
 
-				i{
+                i{
 					width:100%;
 				}
             }
         }
 
+        .fa {
+            display: block;
+        }
     }
 
     .anonymous{ 
@@ -178,6 +201,7 @@
 /******************************
  * Forms
  ******************************/
+
     label, input, button, select {
         display:block;
         font-size: $font-size-label;
@@ -225,6 +249,16 @@
 /******************************
  * Utility Classes
  ******************************/
+
+    .box {
+        background-color:#94cd63;
+        color:white;
+        font-weight:bold;
+        margin:0 auto;
+        height:150px;
+        width: 200px;
+		position: relative;
+    }
     .fa-center{
         height:80px;
         width:80px;
@@ -253,7 +287,8 @@
                 background-color:$color-lightgreen;
                 border-radius: 50%;
 
-                    text-align: center;
+                text-align: center;
+
                 i {
                     line-height: 30px;
                 }
@@ -263,6 +298,57 @@
 
     .todo-detail{
         position:relative;
+
+        @include clearfix;
+    }
+
+    .todos li:nth-child(even) .todo-detail {
+
+        left: -100%;
+
+        margin-right: 50px;
+
+        .triangle{
+            @include triangle(14px, $color-bordergrey, right);
+            @include transform(translateY(-50%));
+            position: absolute;
+            right: -14px;
+            top: 50%;
+
+            &:after {
+                content: ' ';
+                display: block;
+                @include triangle(14px, white, right);
+                position: absolute;
+                top: -7px;
+                left: -9px;
+            }
+        }
+    }
+
+    .todos li:nth-child(odd) .todo-detail {
+
+        margin-left: 50px;
+            
+        .triangle{
+            @include triangle(14px, $color-bordergrey, left);
+            @include transform(translateY(-50%));
+            position: absolute;
+            left: -14px;
+            top: 50%;
+
+            &:after {
+                content: ' ';
+                display: block;
+                @include triangle(14px, white, left);
+                position: absolute;
+                top: -7px;
+                right: -9px;
+            }
+        }
+    }
+
+    .todo-collapse {
 
         padding: 10px 10px 13px 10px;
 
@@ -292,65 +378,30 @@
         }
 
         time {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            margin-top: 0;
+            @include transform(translateY(-50%));
         }
     }
 
-    .todos li:nth-child(even) .todo-detail {
-        /*right: 40px;*/
-        left: -100%;
-        margin-right: 50px;
+    .todos li:nth-child(even) .todo-collapse {
+        float: right;
 
         time {
-            /*right: -100px;*/
-        }
-
-        .triangle{
-            @include triangle(14px, $color-bordergrey, right);
-            @include transform(translateY(-50%));
-            position: absolute;
-            right: -14px;
-            top: 50%;
-
-            &:after {
-                content: ' ';
-                display: block;
-                @include triangle(14px, white, right);
-                position: absolute;
-                top: -7px;
-                left: -9px;
-            }
+            right: -150px;
         }
     }
 
-    .todos li:nth-child(odd) .todo-detail {
-        /*left: 40px;*/
-
-        margin-left: 50px;
+    .todos li:nth-child(odd) .todo-collapse {
+        float: left;
 
         time {
-            /*left: -100px;*/
-        }
-            
-        .triangle{
-            @include triangle(14px, $color-bordergrey, left);
-            @include transform(translateY(-50%));
-            position: absolute;
-            left: -14px;
-            top: 50%;
-
-            &:after {
-                content: ' ';
-                display: block;
-                @include triangle(14px, white, left);
-                position: absolute;
-                top: -7px;
-                right: -9px;
-            }
+            left: -150px;
         }
     }
 
-/***********************
+ /***********************
  * Responsive Stuff
  ***********************/
 

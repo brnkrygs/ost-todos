@@ -1,22 +1,47 @@
-﻿<section>
-    <h1>Registration</h1>
+﻿<div role="main">
+    <section>
+        <h1>Registration</h1>
 
-    <form name="registerForm" data-ng-submit="register()">
+        <form name="registerForm" data-ng-submit="register()">
 
-        <label for="email">Email: </label>
-        <input type="email" data-ng-model="Email" id="email" name="email" placeholder="email@address.com" required />
+            <label for="email">Email: </label>
+            <input type="email" data-ng-model="Email" id="email" name="email" placeholder="email@address.com" required tabindex="1" />
 
-        <label for="name">Name: </label>
-        <input type="text" data-ng-model="Name" id="name" name="name" placeholder="Todo User" required />
+            <label for="name">Name: </label>
+            <input type="text" data-ng-model="Name" id="name" name="name" placeholder="Todo User" required tabindex="2" />
 
-        <label for="password">Password: </label>
-        <input type="password" data-ng-model="Password" id="password" name="password" required />
+            <label for="password">Password: </label>
+            <input type="password" data-ng-model="Password" id="password" name="password" required tabindex="3" />
 
-        <button data-ng-disabled="registerForm.$invalid" type="submit">Register</button>
+            <button data-ng-disabled="registerForm.$invalid" type="submit">Register</button>
 
-        <p>
-            <a href="/#login">Already have a login? Click here to sign in</a>
-        </p>
+            <p>
+                <a href="/#login">Already have a login? Click here to sign in</a>
+            </p>
 
+        </form>
+    </section>
+</div>
+
+<section class="sidebar-form">
+    <header>
+        <h1>Timeline</h1>
+    </header>
+
+    <form name="addTodoForm" ng-submit="addTodo(Title)">
+        <label>Name</label>
+        <input type="text" ng-model="Title" placeholder="Pick up the milk" give-focus required />
+
+        <label>Date</label>
+        <input type="date" ng-model="datetime"></input>
+
+        <label>Time</label>
+        <input type="time"></input>
+
+        <label>Type</label>
+        <select ng-model="type" ng-options="o.vala for o in options"></select>
+
+        <button type="submit">Add Todo</button>
     </form>
+
 </section>

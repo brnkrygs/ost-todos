@@ -17,7 +17,7 @@
         };
 
     }]).
-    controller("ListsCtrl", ["$scope", "TodoList", function($scope, TodoList) {
+    controller( "ListsCtrl", ["$scope", "TodoList", "ListTodo", function ( $scope, TodoList, ListTodo ) {
 
         var self = this;
 
@@ -47,6 +47,37 @@
                 $scope.$broadcast('list:added');
                 self.setLists();
             });
+        };
+        
+        $scope.options = [
+            { vala: "Meeting", valb: "meeting" },
+            { vala: "Trip", valb: "trip" },
+            { vala: "Appointment", valb: "appointment" },
+            { vala: "Call", valb: "call" },
+            { vala: "Default", valb: "default" }
+        ];
+
+        $scope.getTaskClass = function( task ) {
+            var classes = {
+                'trip':'fa-plane',
+                'meeting':'fa-file-o',
+                'appointment':'fa-user',
+                'call':'fa-phone',
+                'default':'fa-code',
+            };
+
+            if ( typeof (task.Type) === "undefined" || task.Type === '' )
+                return classes['default'];
+            return classes[task.Type];
+        };
+
+        $scope.addTodo = function ( title ) {
+            var todo = new ListTodo( { Title: title } );
+            todo.$save( { listId: $scope.lists[0].row[0].Id }, function () {
+                $scope.lists[0].row[0].Todos.push( todo );
+                $scope.showAddForm = 0;
+                $scope.Title = "";
+            } );
         };
 
     }]).
