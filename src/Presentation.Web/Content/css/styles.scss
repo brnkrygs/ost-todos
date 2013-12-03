@@ -243,11 +243,11 @@
  * Utility Classes
  ******************************/
 
- .box {
+    .box {
         background-color:#94cd63;
         color:white;
         font-weight:bold;
-        margin:120px auto;
+        margin:0 auto;
         height:150px;
         width: 200px;
 		position: relative;
@@ -393,4 +393,3 @@
             left: -150px;
         }
     }
-    /**/
