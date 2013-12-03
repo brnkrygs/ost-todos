@@ -320,9 +320,9 @@
         list-style-type:none;
 
         li{
+
             position: relative;
             display: block;
-
 
             a{
                 @include transform(translate(-50%,-50%));
@@ -341,6 +341,16 @@
                 i {
                     line-height: 30px;
                 }
+
+                &:first-child {
+                    top: 60%;
+                }
+            }
+
+            &:first-child:before {
+                content: '';
+                height: 20px;
+                display: block;
             }
         }
     }

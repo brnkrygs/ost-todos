@@ -249,6 +249,12 @@ button {
       text-align: center; }
       .todos li a i {
         line-height: 30px; }
+      .todos li a:first-child {
+        top: 60%; }
+    .todos li:first-child:before {
+      content: '';
+      height: 20px;
+      display: block; }
 
 .todo-detail {
   position: relative;
