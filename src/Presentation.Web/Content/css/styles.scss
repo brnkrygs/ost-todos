@@ -333,7 +333,7 @@
 
                 padding:0;
 
-                background-color:$color-lightgreen;
+                //background-color:$color-lightgreen;
                 border-radius: 50%;
 
                 text-align: center;
@@ -451,6 +451,42 @@
             right: -150px;
         }
     }
+
+	.fa-file-o {
+  background-color: $color-lightblue;
+  border-radius: 50%;
+                  width:30px;
+                height:30px;
+} 
+
+.fa-plane{
+  background-color: $color-gray;
+  border-radius: 50%;
+                  width:30px;
+                height:30px;
+} 
+
+
+.fa-user{
+  background-color: $color-lightgreen;
+  border-radius: 50%;
+                  width:30px;
+                height:30px;
+} 
+
+.fa-phone{
+  background-color: $color-purple;
+  border-radius: 50%;
+                  width:30px;
+                height:30px;
+} 
+
+.fa-code{
+  background-color: $color-gray;;
+  border-radius: 50%;
+                  width:30px;
+                height:30px;
+} 
 
     .todos li:nth-child(odd) .todo-collapse {
         float: left;
