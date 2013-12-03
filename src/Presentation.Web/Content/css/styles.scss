@@ -323,11 +323,6 @@
             position: relative;
             display: block;
 
-            &:before {
-                display: block;
-                content: '';
-                border-left: 1px solid blue;
-            }
 
             a{
                 @include transform(translate(-50%,-50%));
