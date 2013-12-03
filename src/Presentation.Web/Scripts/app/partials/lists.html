@@ -9,7 +9,7 @@
     </div>
     
     <ul class="todos">
-        <li data-ng-repeat="todo in lists[0].row[0].Todos">
+        <li data-ng-repeat="todo in lists[0].row[0].Todos | orderBy:'TodoTime'">
             <a  href="/#/lists" >
                 <i class="fa fa-2x" data-ng-class="getTaskClass( todo )"></i>
             </a>
